@@ -13,7 +13,7 @@ from uniborg.util import admin_cmd
 
 
 
-@borg.on(admin_cmd(pattern=r"lol"))
+@borg.on(admin_cmd(pattern=r"lul"))
 
 async def _(event):
 
