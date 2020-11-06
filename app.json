@@ -29,19 +29,9 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @hellboi_atul.",
+      "description": "Fill your Full name or Username like @the_speedy_speedster",
       "value": "",
       "required": false
-    },
-    "ALIVE_MSG": {
-      "description": "Set Custom awake Message When entering .awake command.",
-      "value": "",
-      "required": true
-    },
-    "ALIVE_PHOTTO": {
-      "description": "Let it be what it is(skip)..or you can change the link according to your convince..this link is useful for `.awake` command.",
-      "value": "https://telegra.ph/file/0d0fafe17acca1c51b42d.jpg",
-      "required": true
     },
     "BIO_MSG": {
       "description": "Put Your Telegram Bio Here Required For Auto Bio.",
@@ -110,16 +100,6 @@
     "STRING_SESSION": {
       "description": "Get this value by running https://darkcobra.crazycreatorr.repl.run/ ",
       "value": ""
-    },
-    "GITHUB_ACCESS_TOKEN": {
-      "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
-      "value": "",
-      "required": false
-    },
-    "GIT_REPO_NAME": {
-      "description": "Your repo name Example: hellboi-atul/hellboi-atul, but GITHUB_ACCESS_TOKEN must be setup first.",
-      "value": "",
-      "required": false
     },
     "LYDIA_API_KEY": {
       "description": "Needed for Lydia AI. Follow https://telegra.ph/Lydia-09-05 to get your API.",
