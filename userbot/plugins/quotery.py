@@ -61,8 +61,6 @@ QUOTES_COLLECTION = ("https://telegra.ph/file/31cf7484892cfdf85415f.jpg",
 
 @borg.on(admin_cmd(pattern=f"quotery$", outgoing=True))
 async def _(event):
-    if event.fwd_from:
-         return
-    QUOTE = random.randint(0, len(QUOTES_COLLECTION) - 1)    
+    QUOTE = random.choice(QUOTES_COLLECTION)   
     await borg.send_file(event.chatid,file=QUOTE)
     await event.delete()
