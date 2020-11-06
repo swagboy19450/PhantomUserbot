@@ -12,7 +12,7 @@ from userbot import CMD_HELP
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-  WARN_PIC = "https://telegra.ph/file/db92ed3d77377856ef911.mp4"
+  WARN_PIC = "https://telegra.ph/file/c7b627350ba5322b6d75d.jpg"
 else:
   WARN_PIC = PMPERMIT_PIC
 
@@ -24,17 +24,16 @@ PM_ON_OFF = Config.PM_DATA
 
 
 DEFAULTUSER = (
-               str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+               str(ALIVE_NAME) if ALIVE_NAME else "Phantom User"
 )
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
+CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else f"**Currently, My Master {ALIVE_NAME} is Busy !!" 
 
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
-USER_BOT_NO_WARN = ("`Hello, This Is An Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
-                   f"{DEFAULTUSER}'s inbox. He is little busy right now..so please follow the below guidelines so that he can decide the reason, why are you here and approve you\n"
+USER_BOT_NO_WARN = ("**Phantom Userbot Antispam Protection is Enabled,**\n\n"
                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n"
-                    "**Mostly he is a busy person.. And told me to take care of his inbox..🤖**\n\n"
-                    "❤️Please Register Your Request/query!❤️\nSend `/start` To Register Your Request!! 🔥\n"
-                    "**Okay now please send a** 🔥 `/start` 🔥 **To Start A Valid Conversation with him..!!❤**")
+                   f"Please follow the below guidelines so that he can decide the reason, why are you here and approve you\n"
+                    "Remember one thing, Spam Can lead to Ban"
+                    "**Send `/start` to Start conversation with My Master**")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
