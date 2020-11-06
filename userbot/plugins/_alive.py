@@ -20,7 +20,7 @@ pm_caption += "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------>**3.8.5\n\n"
 pm_caption += "**🌀 SUPPORT INFO 🌀**\n"
 pm_caption += "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [PhantomOt](https://t.me/PhantomOt)\n"
 pm_caption += "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =** [PhantomSupport](https://t.me/PhantomSupport)\n\n"
-pm_caption += f"[❤️ Deploy your own PHANTOM USERBOT ❤️](https://bit.ly/deployphantom)"
+pm_caption += f"[❤️ Create your own PHANTOM USERBOT ❤️](https://bit.ly/deployphantom)"
 
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
