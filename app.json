@@ -1,17 +1,18 @@
 {
-  "name": "𝔻𝔸ℝ𝕂 ℂ𝕆𝔹ℝ𝔸",
-  "description": "The best and most awaited userbot made by hellboi_atul and modified by Jarvis userbot's owner(@Sppidy) Made with ❤ For Support Join @Dark_cobra_support ",
-  "logo": "https://telegra.ph/file/00f47c54ceda3944dc47c.jpg ",
+  "name": "Phantom Userbot",
+  "description": "A Bot for Security, Management and Fun",
+  "logo": "https://telegra.ph/file/c7b627350ba5322b6d75d.jpg ",
     "keywords": [
     "telegram",
+    "management",
     "userbot",
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/hellboi-atul/hellboi-atul/",
-  "website": "https://github.com/hellboi-atul/hellboi-atul/",
-  "success_url": "https://t.me/Dark_cobra_support",
+  "repository": "https://github.com/prothinkergang/phantomuserbot",
+  "website": "#ToDo",
+  "success_url": "https://t.me/PhantomOt",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -168,7 +169,8 @@
     },
     "NO_OF_COLUMS_DISPLAYED_IN_H_ME_CMD": {
       "description": "Set The Amount Of Rows You Want To Displayed In Help Command default 2",
-      "required": true
+      "required": true,
+      "value": "6"
     },
     "EMOJI_TO_DISPLAY_IN_HELP": {
       "description": "Set The emojies You Want to Add In Help Command You Can Add Multiple Emojies too!!",
