@@ -26,6 +26,8 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
+thumb_img_path = "./Resources/phantom.jpg"
+thumb = thumb_img_path
 
 @borg.on(admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
 async def variable(var):
@@ -174,9 +176,10 @@ async def _(dyno):
         await dyno.edit("Got the logs wait a sec")    
         await dyno.client.send_file(
             dyno.chat_id,
-            "logs.txt",
+            "Phantomlogs.txt",
+           thumb=thumb,
             reply_to=dyno.id,
-            caption="Here are Your Logs...",
+            caption="**Here are Your Logs...**\nPowered By **Phantom Userbot**",
         )
         
         await asyncio.sleep(5)
