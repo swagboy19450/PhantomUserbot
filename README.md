@@ -3,11 +3,11 @@
 <img src="https://telegra.ph/file/0f976cf49ba7961a16fb5.jpg">
 
 <h2>#CREDITS</H2>🔷 DARK-COBRA UB &nbsp &nbsp &nbsp &nbsp &nbsp 🔷 ASENA UB<br>
-  🔷 FRIDAY UB &nbsp &nbsp &nbsp &nbsp &nbsp
+  🔷 FRIDAY UB &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
   🔷 JARVIS UB<br>
-  🔷 USERGE &nbsp &nbsp &nbsp &nbsp &nbsp
+  🔷 USERGE &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
   🔷 MUNNIPOPZ<br>
-  🔷 UNIBORG &nbsp &nbsp &nbsp &nbsp &nbsp
+  🔷 UNIBORG &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
   🔷 CAT USERBOT
 </H3>
 
