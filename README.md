@@ -14,5 +14,5 @@
 
 
 <h1>Easy Way</h1><br>
-<a href="https://bit.ly/deployphantom"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 
