@@ -14,8 +14,9 @@ from telethon import events
 
 import asyncio
 from userbot.utils import admin_cmd
+from userbot import ALIVE_NAME
 
-
+USER =str(ALIVE_NAME)
 
 
 @borg.on(admin_cmd(pattern=r"call"))
@@ -41,13 +42,13 @@ async def _(event):
             "`Connecting To Telegram Headquarters...`",
             "`Call Connected.`",
             "`Telegram: Hello This is Telegram HQ. Who is this?`",
-            "`Me: Yo this is` @[DARK_COBRA_SUPPORT](t.me/Dark_cobra_support) ,`Please Connect me to my idiot bro,Ayush Durov`",
+            f"`Me: Yo this is`{USER},`Please Connect me to my idiot bro,Ayush Durov`",
             "`User Authorised.`",
             "`Calling Pavel Durov`  `At +916969696969`",
             "`Private  Call Connected...`",
             "`Me: Hello Sir, Please Ban This Telegram Account.`",    
             "`Pavel: May I Know Who Is This?`",
-            "`Me: Yo Brah, itz me @hellboi_atul`  ",
+            f"`Me: Yo Brah, itz me {USER}`  ",
             "`Pavel: OMG!!! Long time no see, Wassup Brother...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
             "`Me: Thanks, See You Later Brah.`",
             "`Pavel: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
