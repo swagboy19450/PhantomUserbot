@@ -26,18 +26,19 @@ PM_ON_OFF = Config.PM_DATA
 DEFAULTUSER = (
                str(ALIVE_NAME) if ALIVE_NAME else "Phantom User"
 )
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else f"**Currently, My Master {ALIVE_NAME} is Busy !!" 
+CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else f"Remember, SPAM can lead to Ban" 
 
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
-USER_BOT_NO_WARN = ("**Phantom Userbot Antispam Protection is Enabled,**\n\n"
-                   f"\n**{CUSTOM_MIDDLE_PMP}**\n\n"
-                   f"Please follow the below guidelines so that he can decide the reason, why are you here and approve you\n"
-                    "Remember one thing, Spam Can lead to Ban"
-                    "**Send `/start` to Start conversation with My Master**")
+USER_BOT_NO_WARN = (
+    "**Hello, This is Phantom Protection  ⚠️**\n\n"
+    f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+    "**I Request You To send `/start` to start a Valid Conversation** \n\n"
+    f"**{CUSTOM_MIDDLE_PMP}**"
+)
 
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @borg.on(admin_cmd(pattern="ap ?(.*)"))
+    @borg.on(admin_cmd(pattern="allow ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -53,7 +54,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
-                await event.edit("Hey there, you have been approved by my sweet master's userbot.. Your name: [{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit("Successfully approved [{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -66,7 +67,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
                     pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = "**This user has been auto-approved.. Reason: Outgoing messages..**"
+                    bruh = "**=>> User has been auto-approved Bcoz outgoing messages..**"
                     rko = await borg.send_message(event.chat_id, bruh)
                     await asyncio.sleep(4)
                     await rko.delete()
@@ -82,16 +83,16 @@ if Var.PRIVATE_GROUP_ID is not None:
         chat = await event.get_chat()
         if event.is_private:
           if chat.id == 1289422521 or chat.id == 1388344357 or chat.id == 1131874175:
-            await event.edit("You are tried to block my Devs😡 , now i will sleep for 100 seconds 😴 ")
+            await event.edit("You are tried to block my Devs , now i will sleep for 100 seconds 😴 ")
             await asyncio.sleep(100)
           else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit("Your fuqin request has been blocked by my sweet master!!**[{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit("Your request has been blocked by my  master!!**[{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(2)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @command(pattern="^.dap ?(.*)")
+    @command(pattern="^.deny ?(.*)")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -118,9 +119,9 @@ if Var.PRIVATE_GROUP_ID is not None:
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                    APPROVED_PMs += f"**=>>** [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
                 else:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+                    APPROVED_PMs += f"=**>>** [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
         else:
             APPROVED_PMs = "No approved PMs (yet)"
         if len(APPROVED_PMs) > 4095:
@@ -240,9 +241,9 @@ async def hehehe(event):
 CMD_HELP.update({
     "pmpermit":
     "\
-.ap\
+.allow\
 \nUsage: Approves the mentioned/replied person to PM.\
-.dap\
+.deny\
 \nUsage: dispproves the mentioned/replied person to PM.\
 \n\n.block\
 \nUsage: Blocks the person.\
