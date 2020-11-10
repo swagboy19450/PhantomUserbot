@@ -35,6 +35,10 @@ import asyncio
 import pylast
 from pySmartDL import SmartDL
 from requests import get
+
+#alive PIC
+ALIVE_PIC = os.environ.get("ALIVE_PIC" , None)
+
 # Bot Logs setup:
 if bool(ENV):
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
