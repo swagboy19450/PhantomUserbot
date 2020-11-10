@@ -45,6 +45,7 @@ async def _(event):
         bio = f"📅{DMY} 🔥{BIO_MSG}🔥 ⌚️{HM}"
         logger.info(bio)
         try:
+            await event.edit("**Autobio Enabled**")
             await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 about=bio
             ))
