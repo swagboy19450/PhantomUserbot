@@ -12,6 +12,13 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
 PHANTOM_VID="https://telegra.ph/file/f6fb42cb5880b47499364.mp4"
 
+ALIVE_PIC = os.environ.get("ALIVE_PIC" , None)
+
+if ALIVE_PIC is None:
+    ALIVE_PIC=PHANTOM_VID
+else:
+    ALIVE_PIC=ALIVE_PIC
+
 pm_caption = "**PHANTOM USERBOT IS ONLINE**\n"
 pm_caption += f"**My Master** => {DEFAULTUSER}\n\n"
 pm_caption += "🤖 **SYSTEM INFO** 🤖\n"
