@@ -2,9 +2,9 @@
 """
 .autobio"""
 
-
-
-
+# EVERY IDEA WORTHS
+# Kang Them with Credit
+# (C) phantom Userbot
 
 import asyncio
 import random
