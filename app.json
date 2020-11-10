@@ -43,6 +43,11 @@
       "value": "",
       "required": true
     },
+     "ALIVE_PIC": {
+      "description": "put here any telegraph media link for Media to show with .alive Command",
+      "value": "",
+      "required": true
+    },
     "PM_PERMIT_GROUP_ID": {
       "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
       "value": "",
