@@ -12,7 +12,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot import CMD_HELP, bot
 from userbot.utils import admin_cmd
 
-UPSTREAM_REPO_URL = "https://github.com/prothinkergang/phantomuserbot"
+UPSTREAM_REPO_URL = "https://github.com/Prothinkergang/PhantomUserbot"
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 
@@ -59,7 +59,8 @@ async def upstream(ups):
         return
     except InvalidGitRepositoryError as error:
         if conf != "now":
-            await ups.edit(f"`Checking for Update`\n`do` `update now` `to update your bot`")
+            await ups.edit(f"Hey, did you type update🤔.....\
+            \nPlease do type |.update now| .")
             return
         repo = Repo.init()
         origin = repo.create_remote('upstream', off_repo)
@@ -86,7 +87,7 @@ async def upstream(ups):
     changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
     if not changelog and not force_update:
         await ups.edit(
-            f'\n`Your BOT is`  **up-to-date**  `with`  **{ac_br}**\n')
+            f'\n**{ac_br} please redeploy me I have some internal problems i guess**\n')
         repo.__del__()
         return
     if conf != "now" and not force_update:
@@ -109,7 +110,7 @@ async def upstream(ups):
     if force_update:
         await ups.edit('Force-Syncing to latest stable userbot code, please wait master...😅😅')
     else:
-        await ups.edit('Updating userbot, please wait....')
+        await ups.edit('Updating userbot, please wait....\nDo `.update now` if u[date doesnt took place...')
     if HEROKU_API_KEY is not None:
         import heroku3
         heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -138,7 +139,7 @@ async def upstream(ups):
             remote.set_url(heroku_git_url)
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
-        await ups.edit("`Updating and Deploying new Update\nWith a Restart for Smooth Working..`")
+        await ups.edit("Updating and Deploying New Update. Please wait for 5 minutes then use `.alive` to check if i'm working or not, Just after this update a restart will take place for smooth working...")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     else:
         try:
