@@ -37,6 +37,7 @@ DEL_TIME_OUT = 60
 
 @borg.on(admin_cmd(pattern="autobio"))  # pylint:disable=E0602
 async def _(event):
+  await event.delete()
     if event.fwd_from:
         return
     while True:
