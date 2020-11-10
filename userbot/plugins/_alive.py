@@ -2,6 +2,8 @@
 # animation Idea by @NOOB_GUY_OP (Sipakisking) && @Hell boy_pikachu
 # Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
+
+import os
 import asyncio
 import random
 from telethon import events
