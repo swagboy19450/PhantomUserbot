@@ -7,18 +7,33 @@
 
 
 import asyncio
+import random
 import time
 from telethon.tl import functions
 from telethon.errors import FloodWaitError
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
+
+RANDOM_BIO =(
+  "Happiness never goes out of style",
+  "Always bee yourself",
+  "Scratch here ▒▒▒▒▒▒ to Reveal my secret bio",
+  "Sprinkling a bit of magic",
+  "Simple but significant",
+  "One day, I’m gonna make the onions cry"
+  "Trying My Best !!",
+  "Happy In Myself",
+  "I AM UNIQUE",
+)
+PLANE=random.choice(RANDOM_BIO)
+
 BIO_MSG = Config.BIO_MSG
+
 if BIO_MSG is None:
-  BIO_MSG = "I am a pro @Dark_cobra_support"
+  BIO_MSG = PLANE
 
 DEL_TIME_OUT = 60
-
 
 @borg.on(admin_cmd(pattern="autobio"))  # pylint:disable=E0602
 async def _(event):
