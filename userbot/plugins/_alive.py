@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
-PHANTOM_IMG="https://telegra.ph/file/c7b627350ba5322b6d75d.jpg"
+PHANTOM_VID="https://telegra.ph/file/f6fb42cb5880b47499364.mp4"
 
 pm_caption = "**PHANTOM USERBOT IS ONLINE**\n"
 pm_caption += f"**My Master** => {DEFAULTUSER}\n\n"
@@ -26,5 +26,5 @@ pm_caption += f"**[❤️ Create your own Phantom Userbot ❤️](https://dashbo
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id,file=PHANTOM_IMG,caption=pm_caption)
+    await borg.send_file(alive.chat_id,file=PHANTOM_VID,caption=pm_caption)
     await alive.delete()
