@@ -27,11 +27,11 @@ pm_caption += "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> **3.8.5\n\n"
 pm_caption += "**🌀 SUPPORT INFO 🌀**\n"
 pm_caption += "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [PhantomOt](https://t.me/PhantomOt)\n"
 pm_caption += "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =** [PhantomSupport](https://t.me/PhantomSupport)\n\n"
-pm_caption += f"**[❤️ Create your own Phantom Userbot ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot/blob/main)**"
+pm_caption += f"**[❤️ Create your own Phantom Userbot ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
 
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id,file=PHANTOM_VID,caption=pm_caption)
+    await borg.send_file(alive.chat_id,file=ALIVE_PIC,caption=pm_caption)
     await alive.delete()
