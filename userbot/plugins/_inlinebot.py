@@ -36,7 +36,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Create Your Own Userbot/nFor More Help, Join @PhantomOt"
+            reply_pop_up_alert = "Create Your Own Userbot /n For More Help, Join @PhantomOt"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -55,7 +55,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Create Your Own Userbot/nFor More Help, Join @PhantomOt"
+            reply_pop_up_alert = "Create Your Own Userbot /n For More Help, Join @PhantomOt"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
