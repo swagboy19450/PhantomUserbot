@@ -1,5 +1,5 @@
 {
-  "name": "Phantom Userbot",
+  "name": "🇵​​​​​🇭​​​​​🇦​​​​​🇳​​​​​🇹​​​​​🇴​​​​​🇲​​​​​ 🇺​​​​​🇸​​​​​🇪​​​​​🇷​​​​​🇧​​​​​🇴​​​​​🇹​​​​​",
   "description": "A Bot for Security, Management and Fun",
   "logo": "https://telegra.ph/file/c7b627350ba5322b6d75d.jpg ",
     "keywords": [
@@ -41,12 +41,12 @@
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
       "value": "",
-      "required": true
+      "required": false
     },
      "ALIVE_PIC": {
       "description": "put here any telegraph media link for Media to show with .alive Command",
       "value": "",
-      "required": true
+      "required": false
     },
     "PM_PERMIT_GROUP_ID": {
       "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
