@@ -3,11 +3,11 @@
 # Random Chat Number Added by @Anonymous_machinee
 
 import random, re
-from uniborg.util import admin_cmd
+from userbot.util import phantom_cmd
 import asyncio
 from telethon import events
 
-@borg.on(admin_cmd(pattern="fgben ?(.*)"))
+@borg.on(phantom_cmd(pattern="fgben"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit("Preparing to gban this nub nibba....")
@@ -85,7 +85,6 @@ async def _(event):
         w=random.randrange(116,120)
         await event.edit(f"Gbanning user... \n {w} chats")
         await asyncio.sleep(2)
-        w=random.randrange()
         await event.edit(f"Gbanning user... \n 125 chats")
         await asyncio.sleep(2)
         await event.edit("Gbanning user... \n 130 chats")
@@ -114,16 +113,16 @@ async def _(event):
         await asyncio.sleep(2)
         await event.edit("Gbanning user... \n 190 chats")
         await asyncio.sleep(2)
-        A=random.randrange(191,200)
-        await event.edit(f"Gbanning user... \n {A} chats")
+        z=random.randrange(191,200)
+        await event.edit(f"Gbanning user... \n {z} chats")
         await asyncio.sleep(2)
         await event.edit("Gbanning user... \n 204 chats")
         await asyncio.sleep(1.5)
         await event.edit("Gbanned this nub nibba successfully in😏: 204 chats.\nBlocked and added to gban watch!")
-    
+  
      
         
-@borg.on(admin_cmd(pattern="fungben ?(.*)"))
+@borg.on(phantom_cmd(pattern="fungben ?(.*)"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit("Preparing to Ungban this nub nibba please weit for a while.....")
