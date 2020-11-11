@@ -93,13 +93,14 @@ def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
     number_of_cols = Config.NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD
     multi = Config.EMOJI_TO_DISPLAY_IN_HELP
+    emoticon =random.choice(list(multi))
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
+        "{} {}".format(emoticon, x,emoticon),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
