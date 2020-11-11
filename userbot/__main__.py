@@ -48,8 +48,8 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 import userbot._core
-print("Everything Alright,")
-print("Phantom Is Online, Join @PhantomOt")
+print("Everything is Alright, Do .alive or .help to Check Online Status of Your Bot !!")
+print("Join @PhantomOt For Reporting any Bug or an Issue !!")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
