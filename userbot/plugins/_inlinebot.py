@@ -36,7 +36,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "My Business is My Business\nNone of Your Business\n\nMake Your Own Userbot @PhantomOt"
+            reply_pop_up_alert = "Create Your Own Userbot\nFor More Info Join @PhantomOt"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -111,7 +111,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
             (custom.Button.inline("Previous", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("close menu", data="close"),
+             custom.Button.inline("Close Menu", data="close"),
              custom.Button.inline("Next", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
