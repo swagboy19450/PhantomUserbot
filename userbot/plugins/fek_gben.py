@@ -3,7 +3,7 @@
 # Random Chat Number Added by @Anonymous_machinee
 
 import random, re
-from userbot.util import phantom_cmd
+from userbot.utils import phantom_cmd
 import asyncio
 from telethon import events
 
