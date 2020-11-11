@@ -2,8 +2,7 @@ from telethon import events
 import asyncio
 import zipfile
 from pySmartDL import SmartDL
-impot time
-impot
+import time
 from uniborg.util import phantom_cmd, humanbytes, progress, time_formatter
 
 @borg.on(phantom_cmd(pattern="compress ?(.*)"))
