@@ -3,28 +3,31 @@ import asyncio
 import zipfile
 from pySmartDL import SmartDL
 import time
-from uniborg.util import phantom_cmd, humanbytes, progress, time_formatter
+import os
+from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
+from userbot.utils import phantom_cmd
 
 @borg.on(phantom_cmd(pattern="compress ?(.*)"))
-async def _(event):    if event.fwd_from:
+async def _(event):
+    if event.fwd_from:
         return
-    input_str = evnt.pattern_match.group(1)
+    input_str = event.pattern_match.group(1)
     mone = await event.edit("Processing ...")
-    if not os.pat.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    if event.repy_to_msg_id:
+    if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
-        try
+        try:
             c_time = time.time()
-           downloaded_file_name = await borg.download_media(
+            downloaded_file_name = await borg.download_media(
                 reply_message,
-               Config.TMP_DOWNLOAD_DIRECTORY             
+                Config.TMP_DOWNLOAD_DIRECTORY                
             )
-           directory_name = downloaded_file_name
+            directory_name = downloaded_file_name
             await event.edit("Finish downloading to my local")
-           zipfile.ZipFile(directory_name + '.zip', 'w', zipfile.ZIP_DEFLATED).write(directory_name)
+            zipfile.ZipFile(directory_name + '.zip', 'w', zipfile.ZIP_DEFLATED).write(directory_name)
             await borg.send_file(
-               event.chat_id,
+                event.chat_id,
                 directory_name + ".zip",
                 caption="**Zipped Successfully**",
                 force_document=True,
@@ -36,7 +39,7 @@ async def _(event):    if event.fwd_from:
                 os.remove(directory_name)
             except:
                     pass
-            await event.edit("task Completed")
+            await event.edit("Task Completed")
             await asyncio.sleep(3)
             await event.delete()
         except Exception as e:  # pylint:disable=C0103,W0703
