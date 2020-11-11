@@ -31,12 +31,11 @@ CAT_ID = ["1289422521"]
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 import asyncio
-
 import pylast
 from pySmartDL import SmartDL
 from requests import get
 
-#alive PIC
+# Alive PIC
 ALIVE_PIC = os.environ.get("ALIVE_PIC" , None)
 
 # Bot Logs setup:
@@ -133,7 +132,7 @@ if bool(ENV):
     # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/DARK-COBRA/DARKCOBRA.git")
+    "https://github.com/ProThinkerGang/PhantomUserbot.git")
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
