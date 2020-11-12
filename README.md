@@ -2,7 +2,7 @@
 <br><hr><br>
 
 <div class="hmm">
-<img src="https://telegra.ph/file/ffe8ba66315a741f8c7d1.jpg" width="500" height="500">
+<img src="https://telegra.ph/file/ffe8ba66315a741f8c7d1.jpg" width="500" height="500" align="center">
 </div>
 
 <h1>Easy Way</h1><br> 
