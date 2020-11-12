@@ -1,5 +1,5 @@
 <p align="center"><h1>PHANTOM USERBOT<h1>
-<img src="https://telegra.ph/file/ffe8ba66315a741f8c7d1.jpg" width="1000"></p><hr>
+<img src="https://telegra.ph/file/ffe8ba66315a741f8c7d1.jpg" width="600" height="600"></p><hr>
 
 # Join Us on Telegram
 <a href="https://t.me/Phantomot"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
