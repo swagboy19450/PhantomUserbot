@@ -2,16 +2,8 @@
 <br><hr><br>
 
 <div class="hmm">
-<img src=https://telegra.ph/file/ffe8ba66315a741f8c7d1.jpg">
+<img src=https://telegra.ph/file/ffe8ba66315a741f8c7d1.jpg" width="500" height="500">
 </div>
 
 <h1>Easy Way</h1><br> 
 <a href="https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
-
-
-<style>
-  .hmm{
-  height:50%;
-  width:50%;
-  }
-  </style>
