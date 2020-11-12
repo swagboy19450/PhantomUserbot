@@ -176,8 +176,8 @@ async def _(dyno):
         await dyno.edit("Got the logs wait a sec")    
         await dyno.client.send_file(
             dyno.chat_id,
-            "Phantomlogs.txt",
-           thumb=thumb,
+            "logs.txt",
+            thumb=thumb,
             reply_to=dyno.id,
             caption="**Here are Your Logs...**\nPowered By **Phantom Userbot**",
         )
