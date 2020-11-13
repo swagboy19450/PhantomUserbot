@@ -745,7 +745,7 @@ async def _(event):
             await event.edit(animation_chars[i % 16])      
      
             
-@borg.on([phantom_cmd(pattern=f"show$", outgoing=True))
+@borg.on(phantom_cmd(pattern=f"show$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
