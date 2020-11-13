@@ -3,10 +3,11 @@ import asyncio
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, phantom_cmd
+from userbot import ALIVE_NAME
 
 
-@borg.on(admin_cmd(pattern="gbun"))
+@borg.on(phantom_cmd(pattern="gbun"))
 async def gbun(event):
     if event.fwd_from:
         return
@@ -48,6 +49,6 @@ async def gbun(event):
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
-        mention = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential spammer. `"
+        mention = f"`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {ALIVE_NAME}...\nReason: Potential spammer. `"
         await event.reply(mention)
     await event.delete()
