@@ -34,7 +34,7 @@ async def animepp():
     
 @borg.on(phantom_cmd(pattern="animedp ?(.*)"))
 async def main(event):
-    await event.edit("**Started Anime Profile Pic\n\n Check Your Dp**)    
+    await event.edit("**Started Anime Profile Pic\n\n Check Your Dp**")    
     while True:
         await animepp()
         file = await event.client.upload_file("donottouch.jpg")  
