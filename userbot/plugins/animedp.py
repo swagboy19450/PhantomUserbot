@@ -1,5 +1,5 @@
 #Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
-#Usage .actressdp Im Not Responsible For Any Ban caused By This
+#Usage .animedp Im Not Responsible For Any Ban caused By This
 
 import requests , re , random 
 import urllib , os 
