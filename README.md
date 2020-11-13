@@ -6,11 +6,8 @@
 
 ## This Is The Most Powerful And Stable Bot For Your Telegram Account 
 
-### By Team \#ProThinkerGang 
-
+### By Team #ProThinkerGang 
 # Installing Heroku 
-
-### The Easy Way
 <a href="https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 
 ## String Session 
