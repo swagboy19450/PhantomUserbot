@@ -2,10 +2,10 @@
 Syntax: .decide"""
 from telethon import events
 import requests
-from userbot.utils import admin_cmd
+from userbot.utils import phantom_cmd
 
 
-@borg.on(admin_cmd("decide"))
+@borg.on(phantom_cmd("decide"))
 async def _(event):
     if event.fwd_from:
         return
