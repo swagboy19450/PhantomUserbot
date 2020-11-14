@@ -1,8 +1,3 @@
-# Thanks to Sipak bro and Aryan.. 
-# animation Idea by @NOOB_GUY_OP (Sipakisking) && @Hell boy_pikachu
-# Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
-# Kang with credits else gay...
-
 import os
 import asyncio
 import random
@@ -12,10 +7,10 @@ from userbot import ALIVE_NAME, ALIVE_PIC
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
-PHANTOM_VID="https://telegra.ph/file/432b2b4eb57fa7c50c12b.mp4"
+PHANTOM_IMG=".Resources/phantom1.jpg"
 
 if ALIVE_PIC is None:
-    ALIVE_PIC=PHANTOM_VID
+    ALIVE_PIC=PHANTOM_IMG
 else:
     ALIVE_PIC=ALIVE_PIC
 
