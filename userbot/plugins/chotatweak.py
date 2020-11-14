@@ -3,9 +3,9 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from uniborg.util import admin_cmd
+from userbot.utils import phantom_cmd
 
-@borg.on(admin_cmd(pattern="ctg ?(.*)"))
+@borg.on(phantom_cmd(pattern="ctg ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
