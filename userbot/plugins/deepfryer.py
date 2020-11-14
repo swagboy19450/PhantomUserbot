@@ -36,10 +36,11 @@ from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
 from uniborg.util import admin_cmd
+from userbot.utils import phantom_cmd
 from telethon import events
 
 
-@borg.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True)) 
+@borg.on(phantom_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True)) 
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
@@ -66,7 +67,7 @@ async def deepfryer(event):
     image = Image.open(image)
 
     # fry the image
-    await event.edit("`Deep frying media…`")
+    await event.edit("`Deep Frying media…`")
     for _ in range(frycount):
         image = await deepfry(image)
 
