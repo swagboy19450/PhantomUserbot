@@ -3,24 +3,14 @@
 .appr <app_name>  to fetch app details with Xpl0iter request link."""
 
 import requests
-
 import bs4
-
 import re
-
-
-
 from telethon import *
-
 from userbot import CMD_HELP
-
 from userbot.events import register
 
-
 @borg.on(events.NewMessage(pattern='.app (.*)'))
-
 @borg.on(events.MessageEdited(pattern='.app (.*)'))
-
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
@@ -49,7 +39,6 @@ async def apk(e):
         await e.edit("Exception Occured:- "+str(err))
 
 @borg.on(events.NewMessage(pattern='.appr (.*)'))
-
 @borg.on(events.MessageEdited(pattern='.appr (.*)'))
 
 async def apkr(e):
