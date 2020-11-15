@@ -55,10 +55,10 @@
     },
     "CMD_HNDLR": {
       "desciption": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
-      "value": "\.",
+      "value": "",
       "required": false
     }
-    "CUSTOM_PMPERMIT": {
+    "CUSTOM_PMPERMIT" : {
       "description": "Custom middle pm permit text... May skip..doesn't really matter...",
       "value": "",
       "required": false
