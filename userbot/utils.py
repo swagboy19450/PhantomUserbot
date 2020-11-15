@@ -2,7 +2,7 @@ from userbot import bot
 from telethon import events
 from pathlib import Path
 from var import Var
-from userbot import LOAD_PLUG
+from userbot import LOAD_PLUG , SUDO_LIST
 from userbot import CMD_LIST
 import re
 import logging
