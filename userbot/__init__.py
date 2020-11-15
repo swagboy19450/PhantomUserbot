@@ -123,6 +123,12 @@ if bool(ENV):
     COUNTRY = str(os.environ.get("COUNTRY", "India"))
 
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
+    
+    
+    #####
+    SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+    
+    #####
 
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
