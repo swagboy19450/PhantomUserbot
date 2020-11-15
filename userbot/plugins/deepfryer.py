@@ -38,7 +38,7 @@ from telethon.tl.types import DocumentAttributeFilename
 from userbot.utils import phantom_cmd,sudo_cmd
 
 
-@borg.on(phantom_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))S
+@borg.on(phantom_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
 @borg.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True, allow_sudo=True))
 async def deepfryer(event):
     try:
