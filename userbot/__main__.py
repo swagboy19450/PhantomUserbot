@@ -1,4 +1,5 @@
-from userbot import SUDO_USERS, SUDO_HNDLR, ALIVE_PIC, bot
+from userbot import SUDO_USERS, SUDO_HNDLR, ALIVE_PIC
+from userbot import bot
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
