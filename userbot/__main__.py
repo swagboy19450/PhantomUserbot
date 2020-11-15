@@ -1,5 +1,4 @@
-from userbot import bot
-from userbot import ALIVE_PIC
+from userbot import SUDO_USERS, SUDO_HNDLR, ALIVE_PIC, bot
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
@@ -38,9 +37,6 @@ else:
     else:
         bot.start()
     
-if ALIVE_PIC is not None:
-    print("###--------------Alive Pic Added Successfully--------------###")
-    
 import glob
 path = 'userbot/plugins/*.py'
 files = glob.glob(path)
@@ -49,10 +45,19 @@ for name in files:
         path1 = Path(f.name)
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
+        
+if ALIVE_PIC is not None:
+    print("###--------------Alive Pic Added Successfully--------------###")
+    
+if SUDO_USERS is not None and SUDO_HNDLR is None:
+    for i in range(0,10):
+        print("ERROR:- SET YOUR SUDO_HNDLR")
+    print("If Still The Problem Continues, Contact at @PhantomSupport to get Help from Our Team....")
 
 import userbot._core
 print("Everything is Alright, Do .alive or .help to Check Online Status of Your Bot !!")
 print("Join @PhantomOt For Reporting any Bug or an Issue !!")
+
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
