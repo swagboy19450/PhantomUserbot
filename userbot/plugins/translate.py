@@ -5,12 +5,13 @@ Available Commands:
 
 import emoji
 from googletrans import Translator
-from userbot.utils import phantom_cmd
+from userbot.utils import phantom_cmd, sudo_cmd
 from telethon import events
 
 
 @borg.on(phantom_cmd(pattern="tr ?(.*)"))
 @borg.on(events.NewMessage(pattern=r"\.tr ?(.*)",incoming=True))
+@borg.on(sudo_cmd(pattern="tr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
