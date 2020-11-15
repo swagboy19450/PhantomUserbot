@@ -58,7 +58,7 @@
       "value": "",
       "required": false
     }
-    "CUSTOM_PMPERMIT" : {
+    "CUSTOM_PMPERMIT": {
       "description": "Custom middle pm permit text... May skip..doesn't really matter...",
       "value": "",
       "required": false
