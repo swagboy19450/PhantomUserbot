@@ -39,7 +39,7 @@ else:
         bot.start()
     
 if ALIVE_PIC is not None:
-    print("Alive Pic Added Successfully")
+    print("###--------------Alive Pic Added Successfully--------------###")
     
 import glob
 path = 'userbot/plugins/*.py'
