@@ -35,12 +35,11 @@ from PIL import ImageEnhance
 from PIL import ImageOps
 from telethon import events
 from telethon.tl.types import DocumentAttributeFilename
-from uniborg.util import admin_cmd
-
-from userbot.utils import phantom_cmd
+from userbot.utils import phantom_cmd,sudo_cmd
 
 
-@borg.on(phantom_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
+@borg.on(phantom_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))S
+@borg.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True, allow_sudo=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
