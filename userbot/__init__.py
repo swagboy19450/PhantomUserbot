@@ -127,6 +127,7 @@ if bool(ENV):
     
     #####
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", None)
     
     #####
 
