@@ -11,7 +11,6 @@ if ENV:
         # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
         SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
         # Send .get_id in any group to fill this value.
-        SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", None)
         
         # This is required for the plugins involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
@@ -95,11 +94,18 @@ if ENV:
         EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "🔰")
         # specify command handler that should be used for the plugins
         # this should be a valid "regex" pattern
-        CMD_HNDLR = os.environ.get("COMMAND_HAND_LER", "\.")
+        
+        ##
+        CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
+        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", None)
+        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+        
+        
+        
+        ##
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
-        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
         # VeryStream only supports video formats
         VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
         VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
