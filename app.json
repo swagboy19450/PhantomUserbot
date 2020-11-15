@@ -23,6 +23,11 @@
       "value": "./userbot/DOWNLOADS/",
       "required": false
     },
+    "CMD_HNDLR": {
+      "description": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
+      "value": "",
+      "required": false
+    },
     "F_BAN_LOGGER_GROUP": {
       "description": "Put Group id Same As PRIVATE_GROUP_ID.",
       "value": "",
@@ -53,8 +58,8 @@
       "value": "",
       "required": false
     },
-    "CMD_HNDLR": {
-      "description": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
+    "SUDO_HNDLR": {
+      "description": "Symbol which SUDO_USERS use While Giving Commands. Dont Forget to Enter backslash at Starting of it..",
       "value": "",
       "required": false
     },
