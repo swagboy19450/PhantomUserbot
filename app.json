@@ -54,7 +54,7 @@
       "required": false
     },
     "CMD_HNDLR": {
-      "desciption": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
+      "description": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
       "value": "",
       "required": false
     },
@@ -143,11 +143,6 @@
       "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
       "required": false
     },
-    "EMOJI_TO_DISPLAY_IN_HELP": {
-      "description": "Set The emojies You Want to Add In Help Command You Can Add Multiple Emojies too!!",
-      "value": "",
-      "required": false
-    }, 
     "TZ": {
       "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
       "value": "Asia/Kolkata",
