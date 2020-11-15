@@ -171,8 +171,8 @@ def admin_cmd(pattern=None, **args):
             args["pattern"] = re.compile(pattern)
         else:
             
-            args["pattern"] = re.compile(Config.COMMAND_HAND_LER + pattern)
-            reg =Config.COMMAND_HAND_LER[1]
+            args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
+            reg =Config.CMD_HNDLR[1]
             cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
 
             try:
@@ -224,8 +224,8 @@ def phantom_cmd(pattern=None, **args):
             args["pattern"] = re.compile(pattern)
         else:
             
-            args["pattern"] = re.compile(Config.COMMAND_HAND_LER + pattern)
-            reg =Config.COMMAND_HAND_LER[1]
+            args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
+            reg =Config.CMD_HNDLR[1]
             cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
 
             try:
