@@ -11,7 +11,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.errors import ChatSendMediaForbiddenError
 from userbot import ALIVE_NAME
 from userbot import ALIVE_PIC
-from userbot.utils import phantom_cmd
+from userbot.utils import phantom_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
@@ -46,6 +46,7 @@ medianotallowed = (
                    
 
 @borg.on(phantom_cmd(pattern=r"alive"))
+@borg.on(sudo_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
