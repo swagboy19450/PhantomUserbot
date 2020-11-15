@@ -109,7 +109,7 @@
       "required": false
     },
     "SUDO_USERS": {
-      "description": "Users which Can use Your BOT by giving Commands Starting from SUDO_HNDLR. MAKE only Trustworthy Person as Sudo User"
+      "description": "Users which Can use Your BOT by giving Commands Starting from SUDO_HNDLR. MAKE only Trustworthy Person as Sudo User",
       "required": false,
       "value": "",
     },
