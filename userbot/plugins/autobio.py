@@ -25,13 +25,26 @@ RANDOM_BIO =(
   "Trying My Best !!",
   "Happy In Myself",
   "I AM UNIQUE",
+  "Going On MY Way",
+  "Beware Of Me",
+  "Be At Your Limit",
+  "Finally, Someone saw My Bio",
+  "Enjoying My Life",
+  "Becoming Effective Day By Day",
+  "Spammers, Keep Distance"
+  "See, Someone Watching My Profile",
+  "People remember Me from My Work"
 )
-PLANE=random.choice(RANDOM_BIO)
+
+PLANE=random.randint(0,len(RANDOM_BIO)-1)
+PHANTOM = RANDOM_BIO[PLANE]
 
 BIO_MSG = Config.BIO_MSG
 
 if BIO_MSG is None:
-  BIO_MSG = PLANE
+  BIO_MSG = PHANTOM
+else:
+  BIO_MSG = BIO_MSG
 
 DEL_TIME_OUT = 60
 
