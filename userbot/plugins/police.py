@@ -5,7 +5,7 @@ from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
 @borg.on(phantom_cmd(pattern=r"police"))
-@borg.on(sudo_cmd(pattern=r"police", allow_true=True))
+@borg.on(sudo_cmd(pattern=r"police", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
