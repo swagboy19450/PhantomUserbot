@@ -21,7 +21,7 @@ RANDOM_BIO =(
   "Scratch here ▒▒▒▒▒▒ to Reveal my secret bio",
   "Sprinkling a bit of magic",
   "Simple but significant",
-  "One day, I’m gonna make the onions cry"
+  "One day, I’m gonna make the onions cry",
   "Trying My Best !!",
   "Happy In Myself",
   "I AM UNIQUE",
@@ -31,9 +31,9 @@ RANDOM_BIO =(
   "Finally, Someone saw My Bio",
   "Enjoying My Life",
   "Becoming Effective Day By Day",
-  "Spammers, Keep Distance"
+  "Spammers, Keep Distance",
   "See, Someone Watching My Profile",
-  "People remember Me from My Work"
+  "People remember Me from My Work",
 )
 
 PLANE=random.randint(0,len(RANDOM_BIO)-1)
