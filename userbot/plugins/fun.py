@@ -39,7 +39,7 @@ async def _(event):
 
 
 @borg.on(phantom_cmd(pattern="metoo ?(.*)"))
-@borg.on(sudo_cmd(pattern="metoo ?(.*)"), allow_sudo=True)
+@borg.on(sudo_cmd(pattern="metoo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
