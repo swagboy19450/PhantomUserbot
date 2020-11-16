@@ -15,7 +15,7 @@ from userbot.utils import phantom_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
-PHANTOM_IMG = "./Resources/phantom1.jpg"
+PHANTOM_IMG = "https://telegra.ph/file/d7eed31b87d84be1d88fa.jpg"
 
 if ALIVE_PIC is None:
     ALIVE_PIC = PHANTOM_IMG
