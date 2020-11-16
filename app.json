@@ -1,7 +1,7 @@
 {
   "name": "Phantom Userbot",
   "description": "A Bot for Security, Management and Fun",
-  "logo": "./Resources/phantom1.jpg",
+  "logo": "https://raw.githubusercontent.com/ProThinkerGang/PhantomUserbot/master/Resources/phantom1.jpg",
     "keywords": [
     "telegram",
     "management",
