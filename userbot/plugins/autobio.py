@@ -34,6 +34,7 @@ RANDOM_BIO =(
   "Spammers, Keep Distance",
   "See, Someone Watching My Profile",
   "People remember Me from My Work",
+  "There is a DeD EnD Ahead",
 )
 
 PLANE=random.randint(0,len(RANDOM_BIO)-1)
