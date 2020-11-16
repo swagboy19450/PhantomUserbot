@@ -20,11 +20,12 @@ import asyncio
 import os
 import sys
 import random
-from userbot.utils import admin_cmd,phantom_cmd
+from userbot.utils import phantom_cmd, sudo_cmd
 
 
 
 @borg.on(phantom_cmd(pattern=r"rdl"))
+@borg.on(sudo_cmd(pattern=r"rdl", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
