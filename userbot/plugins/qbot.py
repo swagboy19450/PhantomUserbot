@@ -8,7 +8,7 @@ from userbot import bot, CMD_HELP
 from userbot.utils import phantom_cmd, sudo_cmd
 
 #@register(outgoing=True, pattern="^.q(?: |$)(.*)")
-@borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
+@borg.on(phantom_cmd(pattern=r"qbot(?: |$)(.*)"))
 @borg.on(sudo_cmd(pattern=r"qbot(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
