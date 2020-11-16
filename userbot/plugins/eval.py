@@ -10,10 +10,10 @@ import traceback
 import asyncio
 import sys
 import io
-from uniborg.util import admin_cmd
+from userbot.utils import phantom_cmd
 
 
-@borg.on(admin_cmd("eval"))
+@borg.on(phantom_cmd("eval"))
 async def _(event):
     if event.fwd_from:
         return
