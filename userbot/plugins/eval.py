@@ -10,10 +10,11 @@ import traceback
 import asyncio
 import sys
 import io
-from userbot.utils import phantom_cmd
+from userbot.utils import phantom_cmd, sudo_cmd
 
 
 @borg.on(phantom_cmd("eval"))
+@borg.on(sudo_cmd(pattern="eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
