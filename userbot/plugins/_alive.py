@@ -22,11 +22,10 @@ if ALIVE_PIC is None:
 else:
     ALIVE_PIC = ALIVE_PIC
 
-    
 if SUDO_ALIVE_PIC is None:
-    SUDO_ALIVE_PIC = PHANTOM_IMG
-else:
     SUDO_ALIVE_PIC = ALIVE_PIC
+else:
+    SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
     
 
 alive_caption = "**PHANTOM USERBOT IS ONLINE**\n"
