@@ -20,7 +20,6 @@ from telethon.errors import ChatSendStickersForbiddenError
 import json
 from PIL import ImageEnhance, ImageOps
 from userbot import CMD_HELP
-from telethon.errors import ValueError
 from userbot.events import register
 from telethon.tl.functions.messages import GetInlineBotResultsRequest
 
