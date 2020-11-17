@@ -17,15 +17,17 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
 PHANTOM_IMG = "https://telegra.ph/file/d7eed31b87d84be1d88fa.jpg"
 
-if SUDO_ALIVE_PIC is None:
-    SUDO_ALIVE_PIC = PHANTOM_IMG
-else:
-    SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
-    
 if ALIVE_PIC is None:
     ALIVE_PIC = PHANTOM_IMG
 else:
     ALIVE_PIC = ALIVE_PIC
+
+    
+if SUDO_ALIVE_PIC is None:
+    SUDO_ALIVE_PIC = PHANTOM_IMG
+else:
+    SUDO_ALIVE_PIC = ALIVE_PIC
+    
 
 alive_caption = "**PHANTOM USERBOT IS ONLINE**\n"
 alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
@@ -55,7 +57,7 @@ async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-         await borg.send_file(alive.chat_id, file=SUDO_ALIVE_PIC, caption=alive_caption)
+         await borg.send_file(alive.chat_id, file=ALIVE_PIC, caption=alive_caption)
          await alive.delete()
     except ChatSendMediaForbiddenError:
     	await alive.edit(medianotallowed)
@@ -67,7 +69,7 @@ async def sudoalivepic(sudoalive):
     chat = await sudoalive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-         await borg.send_file(sudoalive.chat_id, file=ALIVE_PIC, caption=alive_caption)
+         await borg.send_file(sudoalive.chat_id, file=SUDO_ALIVE_PIC, caption=alive_caption)
          await sudoalive.delete()
     except ChatSendMediaForbiddenError:
     	await sudoalive.edit(medianotallowed)
