@@ -44,15 +44,6 @@ async def _(event):
             "(ό‿ὸ)ﾉ",
             "(ヾ(´・ω・｀)",
         ]
-    elif input_str in "wtf":
-        emoticons = [
-            "༎ຶ‿༎ຶ",
-            "(‿ˠ‿)",
-            "╰U╯☜(◉ɷ◉ )",
-            "(;´༎ຶ益༎ຶ`)♡",
-            "╭∩╮(︶ε︶*)chu",
-            "( ＾◡＾)っ (‿|‿)",
-        ]
     elif input_str in "love":
         emoticons = [
             "乂❤‿❤乂",
