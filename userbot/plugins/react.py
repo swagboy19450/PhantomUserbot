@@ -7,8 +7,8 @@ import random
 import asyncio
 from userbot.utils import phantom_cmd
 
-#  @borg.on(events.NewMessage(pattern=r"\.react (.*)", outgoing=True))
-@borg.on(phantom_cmd(pattern="\.react (.*)", outgoing=True))
+#borg.on(phantom_cmd(pattern="\.react (.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.react (.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
