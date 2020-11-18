@@ -6,10 +6,11 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from userbot.utils import phantom_cmd
+from userbot.utils import phantom_cmd, sudo_cmd
 
 
 @borg.on(phantom_cmd("info ?(.*)"))
+@borg.on(sudo_cmd("info ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -44,7 +45,7 @@ async def _(event):
     except Exception as e:
         dc_id = "`Need a Profile Picture to check **this**`"
         location = str(e)
-    caption = """User Info Extracted By <b>Phantom Userbot**</b>
+    caption = """User Info Extracted By <b>Phantom Userbot</b>
 <b>⫸ User ID</b>: <code>{}</code>
 <b>⫸ Link To Profile</b>: <a href='tg://user?id={}'>Click Here.</a>
 <b>⫸ First Name</b>: <code>{}</code>
