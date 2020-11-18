@@ -44,7 +44,7 @@ async def _(event):
     except Exception as e:
         dc_id = "`Need a Profile Picture to check **this**`"
         location = str(e)
-    caption = """<b>User Info Extracted By **Phantom Userbot**<b>
+    caption = """User Info Extracted By <b>Phantom Userbot**</b>
 <b>⫸ User ID</b>: <code>{}</code>
 <b>⫸ Link To Profile</b>: <a href='tg://user?id={}'>Click Here.</a>
 <b>⫸ First Name</b>: <code>{}</code>
@@ -68,7 +68,7 @@ async def _(event):
         replied_user.user.verified,
         replied_user.user.bot,
         common_chats
-    )
+    ) # if command is replied to self it shows 0 common groups
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = event.message.id
