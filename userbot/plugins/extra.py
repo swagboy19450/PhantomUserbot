@@ -20,22 +20,6 @@ async def fun(e):
         t = t[:-1] + "_;"
         await e.edit(t)
 
-@borg.on(admin_cmd("yo$"))
-#@register(outgoing=True, pattern="^yo$")
-async def Ooo(e):
-    t = "yo"
-    for j in range(15):
-        t = t[:-1] + "oo"
-        await e.edit(t)
-
-@borg.on(admin_cmd("Oof$"))
-#@register(outgoing=True, pattern="^Oof$")
-async def Oof(e):
-    t = "Oof"
-    for j in range(15):
-        t = t[:-1] + "of"
-        await e.edit(t)
-
 @borg.on(admin_cmd("ccry$"))
 #@register(outgoing=True, pattern="^.cry$")
 async def cry(e):
