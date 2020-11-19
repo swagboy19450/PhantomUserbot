@@ -57,26 +57,29 @@ async def google(gogl):
     photo = await bot.inline_query(
         "goglimgbot", f"{text}")
     hm=len(photo)
-    op=random.randrange(3,hm)
-    ol = random.randrange(3,hm)
+    oa=random.randrange(0,hm)
+    ob = random.randrange(0,hm)
+    oc=random.randrange(0,hm)
+    od = random.randrange(0,hm)
+    oe = random.randrange(0,hm)    
     try:
-        await photo[0].click(gogl.chat_id,
+        await photo[oa].click(gogl.chat_id,
                             reply_to=gogl.reply_to_msg_id,
                             silent=True if gogl.is_reply else False,
                             hide_via=True)
-        await photo[1].click(gogl.chat_id,
+        await photo[ob].click(gogl.chat_id,
                             reply_to=gogl.reply_to_msg_id,
                             silent=True if gogl.is_reply else False,
                             hide_via=True)
-        await photo[2].click(gogl.chat_id,
+        await photo[oc].click(gogl.chat_id,
                             reply_to=gogl.reply_to_msg_id,
                             silent=True if gogl.is_reply else False,
                             hide_via=True)        
-        await photo[op].click(gogl.chat_id,
+        await photo[od].click(gogl.chat_id,
                             reply_to=gogl.reply_to_msg_id,
                             silent=True if gogl.is_reply else False,
                             hide_via=True)
-        await photo[op].click(gogl.chat_id,
+        await photo[oe].click(gogl.chat_id,
                             reply_to=gogl.reply_to_msg_id,
                             silent=True if gogl.is_reply else False,
                             hide_via=True)        
