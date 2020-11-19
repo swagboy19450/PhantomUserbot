@@ -19,8 +19,6 @@ import sys
 import traceback
 import datetime
 
-if FULL_SUDO="ENABLE" and FULL_SUDO_USERS is None:
-    FULL_SUDO_USERS = Config.SUDO_USERS
     
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 from typing import List
@@ -32,6 +30,11 @@ else:
     if os.path.exists("config.py"):
         from config import Development as Config
 
+        
+if FULL_SUDO="ENABLE" and FULL_SUDO_USERS is None:
+    FULL_SUDO_USERS = Config.SUDO_USERS
+    
+    
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
 
