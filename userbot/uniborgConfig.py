@@ -99,8 +99,9 @@ if ENV:
         CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
         SUDO_HNDLR = os.environ.get("SUDO_HNDLR", None)
         SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
-        
-        
+        FULL_SUDO = os.environ.get("FULL_SUDO", None)
+        FULL_SUDO_USERS = os.environ.get("FULL_SUDO_USERS",None)
+                
         
         ##
         # specify list of users allowed to use bot
