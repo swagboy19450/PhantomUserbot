@@ -20,10 +20,12 @@ from telethon.errors import ChatSendStickersForbiddenError
 import json
 from PIL import ImageEnhance, ImageOps
 from userbot import CMD_HELP
+from userbot.utils import phantom_cmd, sudo_cmd
 from userbot.events import register
 from telethon.tl.functions.messages import GetInlineBotResultsRequest
 
-@register(outgoing=True, pattern="^.stic ?(.*)")
+@borg.on(phantom_cmd(pattern="^.stic ?(.*)"))
+@borg.on(sudo_cmd(pattern="^.stic ?(.*)", allow_sudo=True))
 async def machine(stick):
 #"""Creates random anime sticker!"""
     text = stick.pattern_match.group(1)
