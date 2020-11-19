@@ -25,7 +25,7 @@ RANDOM_BIO =(
   "Trying My Best !!",
   "Happy In Myself",
   "I AM UNIQUE",
-  "Going On MY Way",
+  "Going On My Way",
   "Beware Of Me",
   "Be At Your Limit",
   "Finally, Someone saw My Bio",
@@ -35,6 +35,7 @@ RANDOM_BIO =(
   "See, Someone Watching My Profile",
   "People remember Me from My Work",
   "There is a DeD EnD Ahead",
+  "Living My Life.",
 )
 
 PLANE=random.randint(0,len(RANDOM_BIO)-1)
@@ -60,7 +61,7 @@ async def _(event):
         logger.info(bio)
         try:
             await event.edit("**Autobio Enabled**")
-            await asyncio.sleep(8)
+            await asyncio.sleep(5)
             await event.delete()
             await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 about=bio
