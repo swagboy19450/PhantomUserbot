@@ -4,7 +4,7 @@ from pathlib import Path
 from var import Var
 from userbot import LOAD_PLUG , SUDO_LIST
 from userbot import CMD_LIST
-from userbot import FULL_SUDO, FULL_SUDO_USERS
+# from userbot import FULL_SUDO, FULL_SUDO_USERS
 import re
 import logging
 import inspect
@@ -31,7 +31,7 @@ else:
         from config import Development as Config
 
         
-if FULL_SUDO == "ENABLE" and FULL_SUDO_USERS is None:
+if Config.FULL_SUDO=="ENABLE" and Config.FULL_SUDO_USERS is None:
     FULL_SUDO_USERS = Config.SUDO_USERS
     
     
