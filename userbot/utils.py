@@ -31,7 +31,7 @@ else:
         from config import Development as Config
 
         
-if FULL_SUDO="ENABLE" and FULL_SUDO_USERS is None:
+if FULL_SUDO == "ENABLE" and FULL_SUDO_USERS is None:
     FULL_SUDO_USERS = Config.SUDO_USERS
     
     
