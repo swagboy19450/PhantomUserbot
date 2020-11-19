@@ -24,8 +24,10 @@ from userbot.utils import phantom_cmd, sudo_cmd
 from userbot.events import register
 from telethon.tl.functions.messages import GetInlineBotResultsRequest
 
-@borg.on(phantom_cmd(pattern="^.stic ?(.*)"))
-@borg.on(sudo_cmd(pattern="^.stic ?(.*)", allow_sudo=True))
+#@borg.on(phantom_cmd(pattern="^.stic ?(.*)"))
+#@borg.on(sudo_cmd(pattern="^.stic ?(.*)", allow_sudo=True))
+
+@register(outgoing=True, pattern="^.stic ?(.*)")
 async def machine(stick):
 #"""Creates random anime sticker!"""
     text = stick.pattern_match.group(1)
