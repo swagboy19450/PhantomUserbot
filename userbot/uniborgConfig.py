@@ -91,13 +91,12 @@ if ENV:
         # number of colums of buttons to be displayed in .help command
         NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD", 2))
         # emoji to be displayed  in help .help
-        EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "🔰")
         # specify command handler that should be used for the plugins
         # this should be a valid "regex" pattern
         
         ##
         CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
-        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", None)
+        SUDO_HNDLR = os.environ.get("SUDO_HNDLR","\?")
         SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
         FULL_SUDO = os.environ.get("FULL_SUDO", None)
         FULL_SUDO_USERS = os.environ.get("FULL_SUDO_USERS",None)
