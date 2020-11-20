@@ -1,4 +1,5 @@
-from userbot import SUDO_USERS, SUDO_HNDLR, ALIVE_PIC
+from userbot import ALIVE_PIC
+from Userbot.uniborgConfig import SUDO_USERS, SUDO_HNDLR
 from userbot import bot
 from sys import argv
 import sys
