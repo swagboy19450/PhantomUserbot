@@ -1,5 +1,4 @@
 from userbot import ALIVE_PIC
-from userbot.uniborgConfig import SUDO_USERS, SUDO_HNDLR
 from userbot import bot
 from sys import argv
 import sys
@@ -17,7 +16,6 @@ async def add_bot(bot_token):
     await bot.start(bot_token)
     bot.me = await bot.get_me() 
     bot.uid = telethon.utils.get_peer_id(bot.me)
-
 
 
 if len(argv) not in (1, 3, 4):
@@ -51,10 +49,7 @@ for name in files:
 if ALIVE_PIC is not None:
     print("###--------------Alive Pic Added Successfully--------------###")
     
-if SUDO_USERS is not None and SUDO_HNDLR is None:
-    for i in range(0,10):
-        print("ERROR:- SET YOUR SUDO_HNDLR")
-    print("If Still The Problem Continues, Contact at @PhantomSupport to get Help from Our Team....")
+
 
 import userbot._core
 print("Everything is Alright, Do .alive or .help to Check Online Status of Your Bot !!")
