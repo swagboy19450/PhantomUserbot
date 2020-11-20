@@ -15,13 +15,6 @@ from userbot.utils import phantom_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
-PHANTOM_IMG = "https://telegra.ph/file/d7eed31b87d84be1d88fa.jpg"
-
-if ALIVE_PIC is None:
-    ALIVE_PIC = PHANTOM_IMG
-else:
-    ALIVE_PIC = ALIVE_PIC
-
 if SUDO_ALIVE_PIC is None:
     SUDO_ALIVE_PIC = ALIVE_PIC
 else:
@@ -31,7 +24,7 @@ else:
 alive_caption = "**PHANTOM USERBOT IS ONLINE**\n"
 alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
 alive_caption += "🤖 **SYSTEM INFO** 🤖\n"
-alive_caption += "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.3**\n"
+alive_caption += "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.4**\n"
 alive_caption += "**ᴛᴇʟᴇᴛʜᴏɴ - ᴠᴇʀsɪᴏɴ ----> 1.17.0**\n"
 alive_caption += "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> 3.8.6**\n\n"
 alive_caption += "**🌀 SUPPORT INFO 🌀**\n"
@@ -43,7 +36,7 @@ medianotallowed = (
     "**PHANTOM USERBOT IS ONLINE**\n"
     "\n**🌀 Current Stats 🌀\n**"
     f"**My Master** => **{DEFAULTUSER}**\n"
-    "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.3**\n"
+    "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.4**\n"
     "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> 3.8.6**\n"
     "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [PhantomOt](https://t.me/PhantomOt)\n"
     "\n**[❤️Deploy Your Own Phantom Userbot ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
