@@ -23,7 +23,7 @@ from userbot.utils import  errors_handler, admin_cmd, phantom_cmd
 @borg.on(phantom_cmd(pattern="leave$")) # Not for SUDO
 async def leave(e):
         await e.edit("`My Master is leaving this chat.....!\nGoodbye..` ")
-        asyncio.sleep(3)
+        await asyncio.sleep(3)
         if '-' in str(e.chat_id):
             await bot(LeaveChannelRequest(e.chat_id))
         else:
