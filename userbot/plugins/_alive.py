@@ -21,7 +21,7 @@ else:
     SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
     
 
-alive_caption = "**PHANTOM USERBOT IS ONLINE**\n"
+alive_caption = "**PHANTOM UB IS ONLINE**\n"
 alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
 alive_caption += "🤖 **SYSTEM INFO** 🤖\n"
 alive_caption += "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.4**\n"
@@ -33,7 +33,7 @@ alive_caption += "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =** [PhantomSupport](http
 alive_caption += f"**[❤️ Create your own PHANTOM USERBOT ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
 
 medianotallowed = (
-    "**PHANTOM USERBOT IS ONLINE**\n"
+    "**PHANTOM UB IS ONLINE**\n"
     "\n**🌀 Current Stats 🌀\n**"
     f"**My Master** => **{DEFAULTUSER}**\n"
     "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.4**\n"
