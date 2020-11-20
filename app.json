@@ -25,7 +25,7 @@
     },
     "CMD_HNDLR": {
       "description": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
-      "value": "\.",
+      "value": ".",
       "required": false
     },
     "F_BAN_LOGGER_GROUP": {
