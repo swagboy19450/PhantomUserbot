@@ -111,7 +111,7 @@
     "SUDO_USERS": {
       "description": "Users which Can use Your BOT by giving Commands Starting from SUDO_HNDLR. MAKE only Trustworthy Person as Sudo User",
       "value": "",
-      "required": true
+      "required": false
     },
     "PM_LOGGR_BOT_API_ID": {
        "description": "for login private messages create a private channel and do .get_id and add that id", 
