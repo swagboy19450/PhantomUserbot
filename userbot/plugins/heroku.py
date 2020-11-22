@@ -178,7 +178,7 @@ async def _(dyno):
             dyno.chat_id,
             "logs.txt",
             thumb=thumb,
-            reply_to=dyno.id,phantom
+            reply_to=dyno.id,
             caption="**Here are Your Logs...**\nPowered By **Phantom Userbot**",
         )
         
