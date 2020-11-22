@@ -17,12 +17,12 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
 PHANTOM_PIC="https://telegra.ph/file/ecb974be110f8141e861d.jpg"
 
-if ALIVE_PIC is None or ALIVE_PIC="":
+if ALIVE_PIC is None:
     ALIVE_PIC=PHANTOM_PIC
 else:
     ALIVE_PIC=ALIVE_PIC
     
-if SUDO_ALIVE_PIC is None or SUDO_ALIVE_PIC="":
+if SUDO_ALIVE_PIC is None:
     SUDO_ALIVE_PIC = ALIVE_PIC
 else:
     SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
