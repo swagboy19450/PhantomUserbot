@@ -38,7 +38,7 @@ from pySmartDL import SmartDL
 from requests import get
 
 # Alive PIC
-ALIVE_PIC = os.environ.get("ALIVE_PIC" ,"https://telegra.ph/file/d7eed31b87d84be1d88fa.jpg")
+ALIVE_PIC = os.environ.get("ALIVE_PIC",None)
 
 # Bot Logs setup:
 if bool(ENV):
