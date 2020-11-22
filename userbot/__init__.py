@@ -118,7 +118,6 @@ if bool(ENV):
     # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
-    REDIRECTCHANNEL = os.environ.get("REDIRECTCHANNEL", None)
     SUDO_ALIVE_PIC = os.environ.get("SUDO_ALIVE_PIC", None)
 
     # Time & Date - Country and Time Zone
