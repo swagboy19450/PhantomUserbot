@@ -484,14 +484,15 @@ def sudo_cmd(pattern=None, **args):
     # error handling condition check
     elif "incoming" in args and not args["incoming"]:
         args["outgoing"] = True
-    if allow_full_sudo:
-        args["from_users"] = list(Config.FULL_SUDO_USERS)
-        # Mutually exclusive with outgoing (can only set one of either).
-        args["incoming"] = True
-        del args["allow_full_sudo"]
+        
+#    if allow_full_sudo:
+ #       args["from_users"] = list(Config.FULL_SUDO_USERS)
+  #      # Mutually exclusive with outgoing (can only set one of either).
+   #     args["incoming"] = True
+    #    del args["allow_full_sudo"]
     # error handling condition check
-    elif "incoming" in args and not args["incoming"]:
-        args["outgoing"] = True
+   # elif "incoming" in args and not args["incoming"]:
+    #    args["outgoing"] = True
 
     # add blacklist chats, UB should not respond in these chats
     args["blacklist_chats"] = True
