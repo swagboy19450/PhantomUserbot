@@ -11,6 +11,7 @@
     "productivity"
   ],
   "repository": "https://github.com/prothinkergang/phantomuserbot",
+  "stack": "heroku-20",
   "website": "#ToDo",
   "success_url": "https://t.me/PhantomOt",
   "env": {
@@ -26,7 +27,7 @@
     "CMD_HNDLR": {
       "description": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
       "value": "",
-      "required": false
+      "required": true
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name or Username like @the_speedy_speedster",
@@ -40,12 +41,12 @@
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
-      "value": "",
+      "value": "https://telegra.ph/file/f054368430015a0c65ce1.jpg",
       "required": false
     },
      "ALIVE_PIC": {
       "description": "put here any telegraph media link for Media to show with .alive Command",
-      "value": "",
+      "value": "https://telegra.ph/file/ecb974be110f8141e861d.jpg",
       "required": false
     },
     "PM_PERMIT_GROUP_ID": {
@@ -56,7 +57,7 @@
     "SUDO_HNDLR": {
       "description": "Symbol which SUDO_USERS use While Giving Commands. Dont Forget to Enter backslash at Starting of it..",
       "value": "",
-      "required": false
+      "required": true
     },
     "CUSTOM_PMPERMIT": {
       "description": "Custom middle pm permit text... May skip..doesn't really matter...",
