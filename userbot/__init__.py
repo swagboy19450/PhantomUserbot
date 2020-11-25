@@ -117,6 +117,10 @@ if bool(ENV):
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
     SUDO_ALIVE_PIC = os.environ.get("SUDO_ALIVE_PIC", None)
+    
+    ## handlers
+    CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR","\?")
 
     # Time & Date - Country and Time Zone
     COUNTRY = str(os.environ.get("COUNTRY", "India"))
