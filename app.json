@@ -11,7 +11,6 @@
     "productivity"
   ],
   "repository": "https://github.com/prothinkergang/phantomuserbot",
-  "stack": "heroku-20",
   "website": "#ToDo",
   "success_url": "https://t.me/PhantomOt",
   "env": {
