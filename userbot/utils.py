@@ -32,7 +32,6 @@ else:
     if os.path.exists("config.py"):
         from config import Development as Config
 
-
 # if Config.FULL_SUDO=="ENABLE" and Config.FULL_SUDO_USERS is None:
 #   FULL_SUDO_USERS = Config.SUDO_USERS
 
@@ -66,9 +65,9 @@ def command(**args):
             try:
                 cmd = re.search(reg, pattern)
                 try:
-                    cmd = (
-                        cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
-                    )
+                    cmd = (cmd.group(1).replace("$", "").replace("\\",
+                                                                 "").replace(
+                                                                     "^", ""))
                 except:
                     pass
 
@@ -189,7 +188,9 @@ def admin_cmd(pattern=None, **args):
 
             args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
             reg = Config.CMD_HNDLR[1]
-            cmd = (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
+            cmd = (reg + pattern).replace("$",
+                                          "").replace("\\",
+                                                      "").replace("^", "")
 
             try:
                 CMD_LIST[file_test].append(cmd)
@@ -243,7 +244,9 @@ def phantom_cmd(pattern=None, **args):
 
             args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
             reg = Config.CMD_HNDLR[1]
-            cmd = (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
+            cmd = (reg + pattern).replace("$",
+                                          "").replace("\\",
+                                                      "").replace("^", "")
 
             try:
                 CMD_LIST[file_test].append(cmd)
@@ -302,7 +305,9 @@ def register(**args):
         try:
             cmd = re.search(reg, pattern)
             try:
-                cmd = cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
+                cmd = cmd.group(1).replace("$",
+                                           "").replace("\\",
+                                                       "").replace("^", "")
             except:
                 pass
 
@@ -350,7 +355,10 @@ def errors_handler(func):
         except BaseException:
 
             date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-            new = {"error": str(sys.exc_info()[1]), "date": datetime.datetime.now()}
+            new = {
+                "error": str(sys.exc_info()[1]),
+                "date": datetime.datetime.now()
+            }
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
@@ -382,10 +390,12 @@ def errors_handler(func):
             ftext += "\n\n\nLast 5 commits:\n"
 
             process = await asyncio.create_subprocess_shell(
-                command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-            )
+                command,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE)
             stdout, stderr = await process.communicate()
-            result = str(stdout.decode().strip()) + str(stderr.decode().strip())
+            result = str(stdout.decode().strip()) + str(
+                stderr.decode().strip())
 
             ftext += result
 
@@ -408,12 +418,11 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
             round(percentage, 2),
         )
         tmp = progress_str + "{0} of {1}\nETA: {2}".format(
-            humanbytes(current), humanbytes(total), time_formatter(estimated_total_time)
-        )
+            humanbytes(current), humanbytes(total),
+            time_formatter(estimated_total_time))
         if file_name:
-            await event.edit(
-                "{}\nFile Name: `{}`\n{}".format(type_of_ps, file_name, tmp)
-            )
+            await event.edit("{}\nFile Name: `{}`\n{}".format(
+                type_of_ps, file_name, tmp))
         else:
             await event.edit("{}\n{}".format(type_of_ps, tmp))
 
@@ -425,7 +434,7 @@ def humanbytes(size):
     if not size:
         return ""
     # 2 ** 10 = 1024
-    power = 2 ** 10
+    power = 2**10
     raised_to_pow = 0
     dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
     while size > power:
@@ -441,13 +450,11 @@ def time_formatter(milliseconds: int) -> str:
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
-    tmp = (
-        ((str(days) + " day(s), ") if days else "")
-        + ((str(hours) + " hour(s), ") if hours else "")
-        + ((str(minutes) + " minute(s), ") if minutes else "")
-        + ((str(seconds) + " second(s), ") if seconds else "")
-        + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
-    )
+    tmp = (((str(days) + " day(s), ") if days else "") +
+           ((str(hours) + " hour(s), ") if hours else "") +
+           ((str(minutes) + " minute(s), ") if minutes else "") +
+           ((str(seconds) + " second(s), ") if seconds else "") +
+           ((str(milliseconds) + " millisecond(s), ") if milliseconds else ""))
     return tmp[:-2]
 
 
@@ -475,7 +482,9 @@ def sudo_cmd(pattern=None, **args):
 
             args["pattern"] = re.compile(Config.SUDO_HNDLR + pattern)
             reg = Config.SUDO_HNDLR[1]
-            cmd = (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
+            cmd = (reg + pattern).replace("$",
+                                          "").replace("\\",
+                                                      "").replace("^", "")
             try:
                 SUDO_LIST[file_test].append(cmd)
             except:
