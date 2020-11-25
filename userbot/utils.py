@@ -1,28 +1,25 @@
-from userbot import bot
-from telethon import events
-from pathlib import Path
-from var import Var
-from userbot import LOAD_PLUG, SUDO_LIST
-from userbot import CMD_LIST
-
-# from userbot import FULL_SUDO, FULL_SUDO_USERS
-import re
-import logging
+import asyncio
+import datetime
 import inspect
+import logging
 import math
 import os
-import time
-import asyncio
-from traceback import format_exc
-from time import gmtime, strftime
+# from userbot import FULL_SUDO, FULL_SUDO_USERS
+import re
 import subprocess
 import sys
+import time
 import traceback
-import datetime
-
-
-from telethon.tl.functions.messages import GetPeerDialogsRequest
+from pathlib import Path
+from time import gmtime, strftime
+from traceback import format_exc
 from typing import List
+
+from telethon import events
+from telethon.tl.functions.messages import GetPeerDialogsRequest
+
+from userbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
+from var import Var
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
@@ -113,10 +110,11 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import userbot.utils
-        import sys
         import importlib
+        import sys
         from pathlib import Path
+
+        import userbot.utils
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
@@ -125,10 +123,11 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         print("Successfully (re)imported " + shortname)
     else:
-        import userbot.utils
-        import sys
         import importlib
+        import sys
         from pathlib import Path
+
+        import userbot.utils
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
