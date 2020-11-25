@@ -2,7 +2,7 @@ from userbot import bot
 from telethon import events
 from pathlib import Path
 from var import Var
-from userbot import LOAD_PLUG , SUDO_LIST
+from userbot import LOAD_PLUG, SUDO_LIST
 from userbot import CMD_LIST
 # from userbot import FULL_SUDO, FULL_SUDO_USERS
 import re
@@ -19,7 +19,7 @@ import sys
 import traceback
 import datetime
 
-    
+
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 from typing import List
 
@@ -30,11 +30,11 @@ else:
     if os.path.exists("config.py"):
         from config import Development as Config
 
-        
-#if Config.FULL_SUDO=="ENABLE" and Config.FULL_SUDO_USERS is None:
+
+# if Config.FULL_SUDO=="ENABLE" and Config.FULL_SUDO_USERS is None:
  #   FULL_SUDO_USERS = Config.SUDO_USERS
-    
-    
+
+
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
 
@@ -64,7 +64,8 @@ def command(**args):
             try:
                 cmd = re.search(reg, pattern)
                 try:
-                    cmd = cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
+                    cmd = cmd.group(1).replace("$", "").replace(
+                        "\\", "").replace("^", "")
                 except:
                     pass
 
@@ -84,7 +85,7 @@ def command(**args):
             del args["allow_sudo"]
         except:
             pass
-        
+
         args["blacklist_chats"] = True
         black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
         if len(black_list_chats) > 0:
@@ -104,8 +105,8 @@ def command(**args):
             return func
 
         return decorator
-    
-    
+
+
 def load_module(shortname):
     if shortname.startswith("__"):
         pass
@@ -130,7 +131,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
-        mod.tgbot =  bot.tgbot
+        mod.tgbot = bot.tgbot
         mod.Var = Var
         mod.command = command
         mod.logger = logging.getLogger(shortname)
@@ -144,6 +145,7 @@ def load_module(shortname):
         # for imports
         sys.modules["userbot.plugins."+shortname] = mod
         print("Successfully (re)imported "+shortname)
+
 
 def remove_plugin(shortname):
     try:
@@ -162,6 +164,7 @@ def remove_plugin(shortname):
     except:
         raise ValueError
 
+
 def admin_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
@@ -176,10 +179,11 @@ def admin_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            
+
             args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
-            reg =Config.CMD_HNDLR[1]
-            cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
+            reg = Config.CMD_HNDLR[1]
+            cmd = (reg + pattern).replace("$",
+                                          "").replace("\\", "").replace("^", "")
 
             try:
                 CMD_LIST[file_test].append(cmd)
@@ -214,6 +218,7 @@ def admin_cmd(pattern=None, **args):
     is_message_enabled = True
 
     return events.NewMessage(**args)
+
 
 def phantom_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -229,10 +234,11 @@ def phantom_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            
+
             args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
-            reg =Config.CMD_HNDLR[1]
-            cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
+            reg = Config.CMD_HNDLR[1]
+            cmd = (reg + pattern).replace("$",
+                                          "").replace("\\", "").replace("^", "")
 
             try:
                 CMD_LIST[file_test].append(cmd)
@@ -267,7 +273,6 @@ def phantom_cmd(pattern=None, **args):
     is_message_enabled = True
 
     return events.NewMessage(**args)
-
 
 
 def register(**args):
@@ -286,13 +291,14 @@ def register(**args):
 
     if "disable_edited" in args:
         del args['disable_edited']
-    
+
     reg = re.compile('(.*)')
     if not pattern == None:
         try:
             cmd = re.search(reg, pattern)
             try:
-                cmd = cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
+                cmd = cmd.group(1).replace("$", "").replace(
+                    "\\", "").replace("^", "")
             except:
                 pass
 
@@ -302,7 +308,7 @@ def register(**args):
                 CMD_LIST.update({file_test: [cmd]})
         except:
             pass
-        
+
     if allow_sudo:
         args["from_users"] = list(Config.SUDO_USERS)
         # Mutually exclusive with outgoing (can only set one of either).
@@ -317,8 +323,7 @@ def register(**args):
     args["blacklist_chats"] = True
     black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
     if len(black_list_chats) > 0:
-        args["chats"] = black_list_chats    
-        
+        args["chats"] = black_list_chats
 
     def decorator(func):
         if not disable_edited:
@@ -387,6 +392,7 @@ def errors_handler(func):
 
     return wrapper
 
+
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
     now = time.time()
@@ -444,12 +450,13 @@ def time_formatter(milliseconds: int) -> str:
         ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
     return tmp[:-2]
 
+
 class Loader():
     def __init__(self, func=None, **args):
         self.Var = Var
         bot.add_event_handler(func, events.NewMessage(**args))
 
-        
+
 def sudo_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
@@ -465,10 +472,11 @@ def sudo_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            
+
             args["pattern"] = re.compile(Config.SUDO_HNDLR + pattern)
-            reg =Config.SUDO_HNDLR[1]
-            cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
+            reg = Config.SUDO_HNDLR[1]
+            cmd = (reg + pattern).replace("$",
+                                          "").replace("\\", "").replace("^", "")
             try:
                 SUDO_LIST[file_test].append(cmd)
             except:
@@ -484,7 +492,7 @@ def sudo_cmd(pattern=None, **args):
     # error handling condition check
     elif "incoming" in args and not args["incoming"]:
         args["outgoing"] = True
-        
+
 #    if allow_full_sudo:
  #       args["from_users"] = list(Config.FULL_SUDO_USERS)
   #      # Mutually exclusive with outgoing (can only set one of either).
@@ -510,6 +518,7 @@ def sudo_cmd(pattern=None, **args):
     is_message_enabled = True
 
     return events.NewMessage(**args)
+
 
 async def edit_or_reply(event, text):
     if event.sender_id in Config.SUDO_USERS:
