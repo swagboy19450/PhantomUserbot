@@ -14,14 +14,18 @@ from time import gmtime
 from time import strftime
 from traceback import format_exc
 from typing import List
-
 from telethon import events
 from telethon.tl.functions.messages import GetPeerDialogsRequest
 
-from userbot import bot
-from userbot import CMD_LIST
-from userbot import LOAD_PLUG
-from userbot import SUDO_LIST
+from userbot import (
+    bot,
+    SUDO_LIST,
+    CMD_LIST,
+    LOAD_PLUG
+)
+#from userbot import CMD_LIST
+#from userbot import LOAD_PLUG
+#from userbot import SUDO_LIST
 from var import Var
 # from userbot import FULL_SUDO, FULL_SUDO_USERS
 
@@ -34,6 +38,14 @@ else:
 
 # if Config.FULL_SUDO=="ENABLE" and Config.FULL_SUDO_USERS is None:
 #   FULL_SUDO_USERS = Config.SUDO_USERS
+
+
+AKKAOLP = ("\" + Config.CMD_HNDLR
+          )
+SUDO_OLP = ("\" + Config.SUDO_HNDLR)
+           
+
+
 
 
 def command(**args):
@@ -186,8 +198,8 @@ def admin_cmd(pattern=None, **args):
             args["pattern"] = re.compile(pattern)
         else:
 
-            args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
-            reg = Config.CMD_HNDLR[1]
+            args["pattern"] = re.compile(f"{AKKAOLP}" + pattern) #Config.CMD_HNDLR
+            reg = AKKAOLP[1]
             cmd = (reg + pattern).replace("$",
                                           "").replace("\\",
                                                       "").replace("^", "")
@@ -242,8 +254,8 @@ def phantom_cmd(pattern=None, **args):
             args["pattern"] = re.compile(pattern)
         else:
 
-            args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
-            reg = Config.CMD_HNDLR[1]
+            args["pattern"] = re.compile(f"{AKKAOLP}" + pattern)
+            reg = AKKAOLP[1]
             cmd = (reg + pattern).replace("$",
                                           "").replace("\\",
                                                       "").replace("^", "")
