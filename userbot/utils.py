@@ -488,8 +488,8 @@ def sudo_cmd(pattern=None, **args):
             args["pattern"] = re.compile(pattern)
         else:
 
-            args["pattern"] = re.compile(Config.SUDO_HNDLR + pattern)
-            reg = Config.SUDO_HNDLR[1]
+            args["pattern"] = re.compile(f"{SUDO_OLP}" + pattern)
+            reg = SUDO_OLP[1]
             cmd = (reg + pattern).replace("$",
                                           "").replace("\\",
                                                       "").replace("^", "")
