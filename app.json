@@ -24,9 +24,9 @@
       "required": false
     },
     "CMD_HNDLR": {
-      "description": "Symbol which you want to use While Giving Commands. Dont Forget to Enter backslash at Starting of it. Leave it Empty for Default",
-      "value": "",
-      "required": true
+      "description": "Symbol which you want to use While Giving Commands.",
+      "value": ".",
+      "required": false
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name or Username like @the_speedy_speedster",
@@ -49,9 +49,9 @@
       "required": false
     },
     "SUDO_HNDLR": {
-      "description": "Symbol which SUDO_USERS use While Giving Commands. Dont Forget to Enter backslash at Starting of it..",
-      "value": "",
-      "required": true
+      "description": "Symbol which SUDO_USERS use While Giving Commands.",
+      "value": "?",
+      "required": false
     },
     "PM_DATA": {
       "description": "Write DISABLE if you want to disable pm permit else leave it blank...",
