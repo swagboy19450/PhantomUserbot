@@ -42,15 +42,9 @@ RANDOM_BIO =(
   "Living My Life.",
 )
 
-PLANE=random.randint(0,len(RANDOM_BIO)-1)
-PHANTOM = RANDOM_BIO[PLANE]
+
 
 BIO_MSG = Config.BIO_MSG
-
-if BIO_MSG is None:
-  BIO_MSG = PHANTOM
-else:
-  BIO_MSG = BIO_MSG
 
 DEL_TIME_OUT = 60
 
@@ -63,6 +57,12 @@ async def _(event):
         HM = time.strftime("%H:%M:%S")
         bio = f"📅{DMY} 🔥{BIO_MSG}🔥 ⌚️{HM}"
         logger.info(bio)
+        PLANE=random.randint(0,len(RANDOM_BIO)-1)
+        PHANTOM = RANDOM_BIO[PLANE]
+        if BIO_MSG is None:
+            BIO_MSG = PHANTOM
+        else:
+            BIO_MSG = BIO_MSG
         try:
             await event.edit("**Autobio Enabled**")
             await asyncio.sleep(5)
