@@ -35,6 +35,10 @@ RANDOM_BIO =(
   "See, Someone Watching My Profile",
   "People remember Me from My Work",
   "There is a DeD EnD Ahead",
+  "Welcome to the new ERA",
+  "Welcome to My world",
+  "Uniquness at Top Most Level",
+  "Busy Today !!"
   "Living My Life.",
 )
 
