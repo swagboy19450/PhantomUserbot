@@ -42,10 +42,6 @@ RANDOM_BIO =(
   "Living My Life.",
 )
 
-
-
-BIO_MSG = Config.BIO_MSG
-
 DEL_TIME_OUT = 60
 
 @borg.on(phantom_cmd(pattern="autobio"))  # pylint:disable=E0602
@@ -53,16 +49,17 @@ async def _(event):
     if event.fwd_from:
         return
     while True:
+        BIO_MSG = Config.BIO_MSG
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
-        bio = f"📅{DMY} 🔥{BIO_MSG}🔥 ⌚️{HM}"
-        logger.info(bio)
         PLANE=random.randint(0,len(RANDOM_BIO)-1)
         PHANTOM = RANDOM_BIO[PLANE]
         if BIO_MSG is None:
             BIO_MSG = PHANTOM
         else:
             BIO_MSG = BIO_MSG
+        bio = f"📅{DMY} 🔥{BIO_MSG}🔥 ⌚️{HM}"
+        logger.info(bio)
         try:
             await event.edit("**Autobio Enabled**")
             await asyncio.sleep(5)
