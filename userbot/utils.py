@@ -40,12 +40,9 @@ else:
 #   FULL_SUDO_USERS = Config.SUDO_USERS
 
 
-AKKAOLP = ("\" + Config.CMD_HNDLR
-          )
+AKKAOLP = ("\" + Config.CMD_HNDLR)
 SUDO_OLP = ("\" + Config.SUDO_HNDLR)
            
-
-
 
 
 def command(**args):
