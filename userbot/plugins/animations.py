@@ -21,7 +21,23 @@ async def _(event):
 		await event.edit("".join(deq))
 		deq.rotate(1)
 
+LIKE_ANIMATION = (
+   "_____________________________\n"
+   "|                                   \n"                 
+   "|   ╱╱┏╮╱╱╱╱╱╱╱╱╱╱          \n"
+   "|   ╱╱┃┃╱╱  ┳╱┓┳╭┛┳┓        \n"
+   "|   ▉━╯┗━╮_┃╱┃┣┻╮┣╱        \n"
+   "|   ▉┈┈┈┈┃  ┻┛┛┻╱┗┗┛        \n"
+   "|   ▉╮┈┈┈┃▔▔▔▔▔▔▔▔          \n"
+   "|   ╱╰━━━╯                   \n"             
+   "|_____________________________")
 
+
+@borg.on(phantom_cmd(pattern="like"))
+async def handler(event):
+   await event.edit(LIKE_ANIMATION)
+		
+		
 @borg.on(phantom_cmd(pattern="stupid$"))
 async def _(event):
     if event.fwd_from:
