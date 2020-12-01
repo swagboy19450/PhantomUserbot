@@ -131,7 +131,7 @@ async def carbon_api(e):
 
          file,
 
-         caption="<<Carbonised By **[Phantom UserBot](https://t.me/PhantomSupport)**>> ",
+         caption="<<Carbonised By **[Phantom UserBot](https://t.me/Phantomot)**>> ",
 
          force_document=True,
 
