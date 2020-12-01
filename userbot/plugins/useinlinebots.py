@@ -71,7 +71,7 @@ async def phantomot(quote):
     except ValueError:
     	await quote.edit("**Use This Command as** `.gqbot <author name>`")
     except ChatSendInlineForbiddenError:
-    	await stick.edit("Sorry boss, cant make inline request here !!")        
+    	await quote.edit("Sorry boss, cant make inline request here !!")        
 
         
     CMD_HELP.update({
