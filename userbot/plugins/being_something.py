@@ -12,10 +12,9 @@ import asyncio
 import os
 import sys
 import random
-from userbot.utils import admin_cmd
+from userbot.utils import phantom_cmd
 
-@borg.on(admin_cmd(pattern="bbl", outgoing=True))
-
+@borg.on(phantom_cmd(pattern="bbl", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -159,13 +158,9 @@ async def _(event):
     if x==68:
         await event.edit("`\"We show the most love and admiration for people when they're no longer around to appreciate it.\"`")
     if x==69:
-
         await event.edit("`\"We've practiced sleeping thousands of times, yet can't do it very well or be consistent.\"`")
-
     if x==70:
-
         await event.edit("`\"Humans are more enthusiastic about moving to another planet with hostile environment than preserving earth - the planet they are perfectly shaped for.\"`")
-
     if x==71:
 
         await event.edit("`\"The happiest stage of most people's lives is when their brains aren't fully developed yet.\"`")
@@ -281,19 +276,14 @@ async def _(event):
     if x==99:
         
         await event.edit("`\"By faith Noah, being warned of God of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.  <Hebrews 11:7>.\"`")
-        
-    if x==100:
-        
+    if x==100:       
         await event.edit("`\"These words spake Jesus, and lifted up his eyes to heaven, and said, Father, the hour is come; glorify thy Son, that thy Son also may glorify thee:  <John 17:1>.\"`")
-        
     if x==101:
-        
         await event.edit("`\"As thou hast given him power over all flesh, that he should give eternal life to as many as thou hast given him.  <John 17:2>.\"`")
         
         
         
-        
-@borg.on(events.NewMessage(pattern=r"\.belo", outgoing=True))
+@borg.on(phantom_cmd(pattern=r"belo", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
