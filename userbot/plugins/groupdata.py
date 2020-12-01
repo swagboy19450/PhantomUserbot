@@ -20,18 +20,22 @@ from telethon.errors import (BadRequestError, ChatAdminRequiredError,
 from userbot import CMD_HELP
 from userbot.utils import  errors_handler, admin_cmd, phantom_cmd
 
-@borg.on(phantom_cmd(pattern="leave$")) # Not for SUDO
+@borg.on(phantom_cmd(pattern="leave ?(.*)")) # Not for SUDO
 async def leave(e):
-        await e.edit("`My Master is leaving this chat.....!\nGoodbye..` ")
+        input_str = event.pattern_match.group(1)
+        if input_str is not None:
+            await e.edit(f"My Master is Leaving This CHAT..!!\n**Reason**- `{input_str}`")
+        else:
+            await e.edit("`My Master is leaving this chat.....!\nGoodbye..` ")
         await asyncio.sleep(3)
         if '-' in str(e.chat_id):
             await bot(LeaveChannelRequest(e.chat_id))
         else:
-            await e.edit('`Sar This is Not A Chat`')
+            await e.edit('`Sir This is Not A Chat`')
 
 @borg.on(phantom_cmd(pattern="chinfo(?: |$)(.*)", outgoing=True))
 async def info(event):
-    await event.edit("`Weit lemme analyze the chat`")
+    await event.edit("`Wait lemme analyze the chat`")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
