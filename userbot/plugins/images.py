@@ -15,7 +15,7 @@ if IMAGE_LIMIT is None:
     IMAGE_LIMIT="4"
 if IMAGE_LIMIT > "10":
     IMAGE_LIMIT="4"
-if IMAGE_LIMIT="0":
+if IMAGE_LIMIT < "1":
     IMAGE_LIMIT="3"
 
 @borg.on(phantom_cmd(pattern="img ?(.*)"))
