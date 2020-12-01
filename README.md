@@ -22,4 +22,4 @@
 <a href="https://t.me/PhantomSupport"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram" width="190" height="28"></a>
 &nbsp; &nbsp; &nbsp;
 <a href="https://t.me/Phantomot"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram" width="190" height="28"></a>
-<br><hr> <img src="https://telegra.ph/file/284a06947670a08001b67.jpg">
+<br><hr> <img src="https://telegra.ph/file/284a06947670a08001b67.jpg"><img src="https://telegra.ph/file/8f072eba1627e4c321e3a.png">
