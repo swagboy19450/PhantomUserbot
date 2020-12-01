@@ -40,7 +40,7 @@ from userbot.utils import phantom_cmd
 
 @borg.on(phantom_cmd(pattern="leave ?(.*)"))  # Not for SUDO
 async def leave(e):
-    input_str = event.pattern_match.group(1)
+    input_str = e.pattern_match.group(1)
     if input_str is not None:
         await e.edit(
             f"My Master is Leaving This CHAT..!!\n**Reason**- `{input_str}`")
