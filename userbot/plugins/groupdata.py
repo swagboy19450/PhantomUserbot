@@ -45,10 +45,9 @@ async def leave(e):
         await e.edit(
             f"`My Master is Leaving This CHAT..!!`\n**Reason** - `{input_str}`")
     else:
-        pass
+        await e.edit("`My Master is leaving this chat.....!\nGoodbye..` ")
     await asyncio.sleep(3)
     if "-" in str(e.chat_id):
-        await e.edit("`My Master is leaving this chat.....!\nGoodbye..` ")
         await bot(LeaveChannelRequest(e.chat_id))
     else:
         await e.edit("`Sir This is Not A Chat`")
