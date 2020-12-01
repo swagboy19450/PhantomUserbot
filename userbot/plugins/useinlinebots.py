@@ -24,6 +24,7 @@ from userbot import CMD_HELP
 from userbot.utils import phantom_cmd, sudo_cmd
 from userbot.events import register
 from telethon.tl.functions.messages import GetInlineBotResultsRequest
+from telethon.errors import ChatSendInlineForbiddenError
 
 #@borg.on(phantom_cmd(pattern="^.stic ?(.*)"))
 #@borg.on(sudo_cmd(pattern="^.stic ?(.*)", allow_sudo=True))
@@ -47,13 +48,13 @@ async def machine(stick):
     except ValueError:
     	await stick.edit("**Use This Command as** `.stic <any emoji>`\nor Stickers are Not Avaliable for Entered Emoji")
     except ChatSendStickersForbiddenError:
-    	await stick.edit("Sorry boss Can't Send Sticker Here !!")
+    	await stick.edit("Sorry boss, I can't send Sticker Here !!")
 #Phantomot
 # @Anonymous_Machinee
         
 @register(outgoing=True, pattern="^.gqbot ?(.*)") #Kang With Credit
 async def phantomot(quote):
-#"""Creates random anime sticker!"""
+# give quotes according to search # Thanks to SpecHide's GoodQuoteBot
     text = quote.pattern_match.group(1)
     if text is None:
         await event.edit("Use This Command as `.gqbot <search query>`")
@@ -69,6 +70,8 @@ async def phantomot(quote):
         await quote.delete()
     except ValueError:
     	await quote.edit("**Use This Command as** `.gqbot <author name>`")
+    except ChatSendInlineForbiddenError:
+    	await stick.edit("Sorry boss, cant make inline request here !!")        
 
         
     CMD_HELP.update({
