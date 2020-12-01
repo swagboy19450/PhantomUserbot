@@ -7,10 +7,18 @@ from userbot.google_imgs import googleimagesdownload
 import os
 import shutil
 from re import findall
-from userbot.utils import admin_cmd
+from userbot.utils import phantom_cmd
 
+IMAGE_LIMIT = os.environ.get("IMAGE_LIMIT",None)
 
-@borg.on(admin_cmd(pattern="img ?(.*)"))
+if IMAGE_LIMIT is None:
+    IMAGE_LIMIT="4"
+if IMAGE_LIMIT > "10":
+    IMAGE_LIMIT="4"
+if IMAGE_LIMIT="0":
+    IMAGE_LIMIT="3"
+
+@borg.on(phantom_cmd(pattern="img ?(.*)"))
 async def img_sampler(event):
     await event.edit("`Processing...`")
     reply = await event.get_reply_message()
@@ -29,7 +37,7 @@ async def img_sampler(event):
         lim = lim.replace("lim=", "")
         query = query.replace("lim=" + lim[0], "")
     except IndexError:
-        lim = 5
+        lim = IMAGE_LIMIT
     response = googleimagesdownload()
 
     # creating list of arguments
