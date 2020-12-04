@@ -29,7 +29,7 @@ async def yutup(event):
     )
 
     if not kullanici.user.username:
-        return await event.edit("`Join` @Phantomot `for any Query or Help..`")
+        return await event.edit("`Join` @PhantomSupport `for any Query or Help..`")
 
     avatar = upload_file(foto)
     json = f"https://some-random-api.ml/canvas/youtube-comment?avatar=https://telegra.ph{avatar[0]}&comment={quote(reply.message)}&username={kullanici.user.username}"
