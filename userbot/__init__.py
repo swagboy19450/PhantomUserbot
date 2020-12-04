@@ -118,6 +118,10 @@ if bool(ENV):
     AUTONAME = os.environ.get("AUTONAME", None)
     SUDO_ALIVE_PIC = os.environ.get("SUDO_ALIVE_PIC", None)
     
+    #
+    OWNER_ID = int(os.environ.get("OWNER_ID", None))
+    
+    #
     ## handlers
     CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
     SUDO_HNDLR = os.environ.get("SUDO_HNDLR","\?")
