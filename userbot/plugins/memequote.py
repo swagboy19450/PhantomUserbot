@@ -52,31 +52,6 @@ RUNSREACTS = [
     "Feeling so much joy for you today. What an impressive achievement!",
 ]
 
-LOVESTR = [
-    "The best and most beautiful things in this world cannot be seen or even heard, but must be felt with the heart.",
-    "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
-    "Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope.",
-    "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
-    "The real lover is the man who can thrill you by kissing your forehead or smiling into your eyes or just staring into space.",
-    "I swear I couldn't love you more than I do right now, and yet I know I will tomorrow.",
-    "When I saw you I fell in love, and you smiled because you knew it.",
-    "In all the world, there is no heart for me like yours. / In all the world, there is no love for you like mine.",
-    "To love or have loved, that is enough. Ask nothing further. There is no other pearl to be found in the dark folds of life.",
-    "If you live to be a hundred, I want to live to be a hundred minus one day, so I never have to live without you.",
-    "Some love stories aren't epic novels. Some are short stories. But that doesn't make them any less filled with love.",
-    "As he read, I fell in love the way you fall asleep: slowly, and then all at once.",
-    "I've never had a moment's doubt. I love you. I believe in you completely. You are my dearest one. My reason for life.",
-    "Do I love you? My god, if your love were a grain of sand, mine would be a universe of beaches.",
-    "I am who I am because of you.",
-    "I just want you to know that you're very special... and the only reason I'm telling you is that I don't know if anyone else ever has.",
-    "Remember, we're madly in love, so it's all right to kiss me any time you feel like it.",
-    "I love you. I knew it the minute I met you.",
-    "I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be.",
-    "I love you not because of who you are, but because of who I am when I am with you.",
-]
-
-
-
 METOOSTR = [
     "Me too thanks",
     "Haha yes, me too",
@@ -303,11 +278,6 @@ GDMORNING = [
     "Today is not just another day, but another possible chance to achieve what you couldn’t achieve yesterday. So get on your feet and chase after your success. Good morning.",
     "As you wake up from sleep today, know that I have faith in you. I believe in you, and I know you have what it takes to conquer the hurdles in your way. Just believe in yourself like I believe in you and you will achieve remarkable things in this life. Good morning."
 ]    
-
-
-@borg.on(admin_cmd(pattern=f"love$", outgoing=True))
-async def love(chutiyappa):
-    await chutiyappa.edit(choice(LOVESTR))
         
 @borg.on(admin_cmd(pattern=f"metoo$", outgoing=True))
 async def metoo(hahayes):
