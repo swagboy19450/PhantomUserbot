@@ -1,8 +1,8 @@
 """ Powered by @Google
 Available Commands:
-.gs <query>
+.go <query>
 
-.grs"""
+.go"""
 
 
 
@@ -17,7 +17,7 @@ def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd(pattern="gs (.*)"))
+@borg.on(admin_cmd(pattern="go (.*)"))
 async def _(event):
     if event.fwd_from:
         return
