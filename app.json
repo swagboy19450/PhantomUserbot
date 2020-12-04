@@ -76,6 +76,10 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
+    "OWNER_ID": {
+      "description": "Go to @JarvisofficialSecuritybot and send /id to get this Value",
+      "value": ""
+    },
     "PLUGIN_CHANNEL": {
       "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": ""
