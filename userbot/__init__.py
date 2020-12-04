@@ -119,7 +119,7 @@ if bool(ENV):
     SUDO_ALIVE_PIC = os.environ.get("SUDO_ALIVE_PIC", None)
     
     #
-    OWNER_ID = int(os.environ.get("OWNER_ID", None))
+   # OWNER_ID = int(os.environ.get("OWNER_ID", None))
     
     #
     ## handlers
