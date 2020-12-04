@@ -121,9 +121,9 @@ if bool(ENV):
     
     #
     OWNER_ID = int(os.environ.get("OWNER_ID", None))
-    ABOUT_OWNER = await borg(GetFullUserRequest(OWNER_ID))
-    OWNER_FIRST_NAME = ABOUT_OWNER.first_name
-    OWNER_LST_NAME = ABOUT_OWNER.last_name
+  #  ABOUT_OWNER = await borg(GetFullUserRequest(OWNER_ID))
+   # OWNER_FIRST_NAME = ABOUT_OWNER.first_name
+    #OWNER_LST_NAME = ABOUT_OWNER.last_name
     
     #
     ## handlers
