@@ -102,14 +102,14 @@ if Var.PRIVATE_GROUP_ID is not None:
         firstname = replied_user.user.first_name
         input_str = event.pattern_match.group(1)
         chat = await event.get_chat()
-        if event.is_private:
-          if chat.id == 1289422521:
-            await event.edit("Sorry, I Can't Disapprove My Master")
-          if input_str=="all":
+        if input_str=="all":
             approved_users = pmpermit_sql.get_all_approved()
             for a_user in approved_users:
               pmpermit_sql.disapprove(a_user.chat_id)
             await event.edit("All Disapproved !!") # Machinee Work xd
+        if event.is_private:
+          if chat.id == 1289422521:
+            await event.edit("Sorry, I Can't Disapprove My Master")
           else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
