@@ -5,6 +5,7 @@ from telethon.sessions import StringSession
 from telethon import TelegramClient
 from userbot.helper import functions as darkdef
 from var import Var
+from telethon.tl.functions.users import GetFullUserRequest
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -119,7 +120,10 @@ if bool(ENV):
     SUDO_ALIVE_PIC = os.environ.get("SUDO_ALIVE_PIC", None)
     
     #
-   # OWNER_ID = int(os.environ.get("OWNER_ID", None))
+    OWNER_ID = int(os.environ.get("OWNER_ID", None))
+    ABOUT_OWNER = await borg(GetFullUserRequest(OWNER_ID))
+    OWNER_FIRST_NAME = ABOUT_OWNER.first_name
+    OWNER_LST_NAME = ABOUT_OWNER.last_name
     
     #
     ## handlers
