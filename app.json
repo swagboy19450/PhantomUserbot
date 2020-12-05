@@ -18,11 +18,6 @@
       "description": "Setting this to ANYTHING will enable heroku.",
       "value": "ANYTHING"
     },
-    "TEMP_DOWNLOAD_DIRECTORY": {
-      "description": "Where downloaded files will go.",
-      "value": "./userbot/DOWNLOADS/",
-      "required": false
-    },
     "CMD_HNDLR": {
       "description": "Symbol which you want to use While Giving Commands.",
       "value": ".",
