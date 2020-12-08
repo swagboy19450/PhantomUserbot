@@ -2,13 +2,11 @@ import asyncio
 import io
 import os
 import time
-
 from telethon import errors
 from telethon import events
 from telethon import functions
 from telethon import types
 from telethon.tl.functions.users import GetFullUserRequest
-
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME
 from userbot import CMD_HELP
@@ -71,6 +69,9 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         chat = await event.get_chat()
         if event.is_private:
+            vector = await event.client(GetFullUserRequest(event.chat.id))
+            if vector.user.bot == True:
+                pass
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
                     pmpermit_sql.approve(chat.id, "outgoing")
@@ -105,14 +106,21 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await event.client(functions.contacts.BlockRequest(chat.id)
                                        )
 
-    @command(pattern="^.deny")
+    @command(pattern="^.deny ?(.*)")
     async def approve_p_m(event):
         if event.fwd_from:
             return
-        replied_user = await event.client(GetFullUserRequest(event.chat_id))
-        firstname = replied_user.user.first_name
-        chat = await event.get_chat()
+        input_str = event.pattern_match.group(1)
+        if input_str == "all":
+            approved_users = pmpermit_sql.get_all_approved()
+            for a_user in approved_users:
+                pmpermit_sql.disapprove(a_user.chat_id)
+            # Anonymous_Machinee's Work xd
+            await event.edit("All Disapproved Boss!!")
         if event.is_private:
+            replied_user = await event.client(GetFullUserRequest(event.chat_id))
+            firstname = replied_user.user.first_name
+            chat = await event.get_chat()
             if chat.id == 1289422521:
                 await event.edit("Sorry, I Can't Disapprove My Master")
             else:
@@ -124,15 +132,6 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await event.delete()
 
-    @command(pattern="^.deny ?(.*)")
-    async def deny_all_cmd(event):
-        input_str = event.pattern_match.group(1)
-        if input_str == "all":
-            approved_users = pmpermit_sql.get_all_approved()
-            for a_user in approved_users:
-                pmpermit_sql.disapprove(a_user.chat_id)
-            # Anonymous_Machinee's Work xd
-            await event.edit("All Disapproved Boss!!")
 
     @command(pattern="^.listapproved")
     async def approve_p_m(event):
