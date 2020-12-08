@@ -320,20 +320,9 @@ async def timer_blankx(e):
   await asyncio.sleep(1)
  await asyncio.sleep(1) 
  await e.edit("`Tesla Wireless Charging (beta) Completed...\nDevice Detected: Nokia 1100 (Space Grey Varient)\nBattery Percentage:` [100%](https://telegra.ph/file/a45aa7450c8eefed599d9.mp4) ", link_preview=True)
-
-
-@borg.on(admin_cmd(pattern=r"lul$"))
-async def _(event):
-	if event.fwd_from:
-		return
-	deq = deque(list("😂🤣😂🤣😂🤣"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
-		await event.edit("".join(deq))
-		deq.rotate(1)
     
 
-@borg.on(admin_cmd(pattern=r"nothappy$"))
+@borg.on(phantom_cmd(pattern=r"nothappy$"))
 async def _(event):
 	if event.fwd_from:
 		return
@@ -344,7 +333,7 @@ async def _(event):
 		deq.rotate(1)
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="clock$"))
+@borg.on(phantom_cmd(outgoing=True, pattern="clock$"))
 async def _(event):
 	    if event.fwd_from:
 		    return
@@ -355,7 +344,7 @@ async def _(event):
 		    deq.rotate(1)
 
     
-@borg.on(admin_cmd(pattern="heart$"))		
+@borg.on(phantom_cmd(pattern="heart$"))		
 async def _(event):
 	if event.fwd_from:
 		return
@@ -365,8 +354,29 @@ async def _(event):
 		await event.edit("".join(deq))
 		deq.rotate(1)        
 
-        		
-@borg.on(admin_cmd(pattern="gym$", outgoing=True))
+    
+@borg.on(phantom_cmd(pattern=r"tlol"))
+async def _(event):
+	if event.fwd_from:
+		return
+	deq = deque(list("🤔🧐🤨🤔🧐🤨"))
+	for _ in range(999):
+		await asyncio.sleep(1)
+		await event.edit("".join(deq))
+		deq.rotate(1)
+    
+@borg.on(phantom_cmd(pattern=r"lol"))
+async def _(event):
+	if event.fwd_from:
+		return
+	deq = deque(list("😂🤣😂🤣😂🤣"))
+	for _ in range(999):
+		await asyncio.sleep(1)
+		await event.edit("".join(deq))
+		deq.rotate(1)
+ 
+		
+@borg.on(phantom_cmd(pattern="gym$", outgoing=True))
 async def _(event):
 	if event.fwd_from:
 		return
