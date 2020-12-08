@@ -94,19 +94,13 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(2)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @command(pattern="^.deny ?(.*)")
+    @command(pattern="^.deny")
     async def approve_p_m(event):
         if event.fwd_from:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        input_str = event.pattern_match.group(1)
         chat = await event.get_chat()
-        if input_str=="all":
-            approved_users = pmpermit_sql.get_all_approved()
-            for a_user in approved_users:
-              pmpermit_sql.disapprove(a_user.chat_id)
-            await event.edit("All Disapproved !!") # Machinee Work xd
         if event.is_private:
           if chat.id == 1289422521:
             await event.edit("Sorry, I Can't Disapprove My Master")
@@ -117,9 +111,16 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.delete()
                 
-    
-
-    @command(pattern="^.listap")
+    @command(pattern="^.deny ?(.*)")
+    async def deny_all_cmd(event):
+      input_str = event.pattern_match.group(1)
+      if input_str=="all":
+        approved_users = pmpermit_sql.get_all_approved()
+        for a_user in approved_users:
+          pmpermit_sql.disapprove(a_user.chat_id)
+        await event.edit("All Disapproved Boss!!") # Anonymous_Machinee's Work xd
+            
+    @command(pattern="^.listapproved")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -171,23 +172,14 @@ if Var.PRIVATE_GROUP_ID is not None:
         sender = await bot.get_entity(chat_id)
 
         if chat_id == bot.uid:
-
             # don't log Saved Messages
-
             return
-
         if sender.bot:
-
             # don't log bots
-
             return
-
         if sender.verified:
-
             # don't log verified accounts
-
             return
-          
         if PM_ON_OFF == "DISABLE":
             return
 
@@ -242,18 +234,3 @@ async def hehehe(event):
             pmpermit_sql.approve(chat.id, "**My Boss Is Best🔥**")
             await borg.send_message(chat, "**Boss Meet My Creator he made me..he is the best you know..**")
             
-            
-            
-CMD_HELP.update({
-    "pmpermit":
-    "\
-.allow\
-\nUsage: Approves the mentioned/replied person to PM.\
-.deny\
-\nUsage: dispproves the mentioned/replied person to PM.\
-\n\n.block\
-\nUsage: Blocks the person.\
-\n\n.listap\
-\nUsage: To list the all approved users.\
-"
-})
