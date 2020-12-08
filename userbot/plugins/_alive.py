@@ -15,18 +15,18 @@ from userbot.utils import phantom_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
-PHANTOM_PIC="https://telegra.ph/file/ecb974be110f8141e861d.jpg"
+PHANTOM_PIC = "https://telegra.ph/file/ecb974be110f8141e861d.jpg"
 
 if ALIVE_PIC is None:
-    ALIVE_PIC=PHANTOM_PIC
+    ALIVE_PIC = PHANTOM_PIC
 else:
-    ALIVE_PIC=ALIVE_PIC
-    
+    ALIVE_PIC = ALIVE_PIC
+
 if SUDO_ALIVE_PIC is None:
     SUDO_ALIVE_PIC = ALIVE_PIC
 else:
     SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
-    
+
 
 alive_caption = "**PHANTOM UB IS ONLINE**\n"
 alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
@@ -48,19 +48,18 @@ medianotallowed = (
     "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [Phantomot](https://t.me/Phantomot)\n"
     "\n**[❤️Deploy Your Own Phantom Userbot ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
 )
-                   
-                   
+
 
 @borg.on(phantom_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-         await borg.send_file(alive.chat_id, file=ALIVE_PIC, caption=alive_caption)
-         await alive.delete()
+        await borg.send_file(alive.chat_id, file=ALIVE_PIC, caption=alive_caption)
+        await alive.delete()
     except ChatSendMediaForbiddenError:
-    	await alive.edit(medianotallowed)
- #Phantomot
+        await alive.edit(medianotallowed)
+ # Phantomot
 
 
 @borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
@@ -68,8 +67,7 @@ async def sudoalivepic(sudoalive):
     chat = await sudoalive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-         await borg.send_file(sudoalive.chat_id, file=SUDO_ALIVE_PIC, caption=alive_caption)
-         await sudoalive.delete()
+        await borg.send_file(sudoalive.chat_id, file=SUDO_ALIVE_PIC, caption=alive_caption)
+        await sudoalive.delete()
     except ChatSendMediaForbiddenError:
-    	await sudoalive.edit(medianotallowed)
-    
+        await sudoalive.edit(medianotallowed)

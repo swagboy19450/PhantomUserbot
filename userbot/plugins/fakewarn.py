@@ -4,6 +4,7 @@ from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 from userbot.utils import phantom_cmd
 
+
 @borg.on(phantom_cmd(pattern="warn1"))
 async def _(event):
     if event.fwd_from:
@@ -37,6 +38,7 @@ async def _(event):
         await event.reply(mentions)
     await event.delete()
 
+
 @borg.on(phantom_cmd(pattern="warn3"))
 async def _(event):
     if event.fwd_from:
@@ -52,6 +54,7 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
+
 
 @borg.on(phantom_cmd(pattern="warn0"))
 async def _(event):
@@ -85,6 +88,7 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
+
 
 @borg.on(phantom_cmd(pattern="fw"))
 async def _(event):
