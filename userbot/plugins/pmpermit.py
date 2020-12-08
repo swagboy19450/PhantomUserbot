@@ -14,6 +14,7 @@ from userbot import CUSTOM_PMPERMIT
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 from userbot.utils import phantom_cmd
+from userbot import OWNER_ID
 
 DEF_PIC = "https://telegra.ph/file/f054368430015a0c65ce1.jpg"
 
@@ -70,7 +71,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         chat = await event.get_chat()
         if event.is_private:
             vector = await event.client(GetFullUserRequest(event.chat.id))
-            if vector.user.bot == True or event.chat.id==777000: # Telegram official bots will kill this codes
+            if vector.user.bot == True or event.chat.id==777000 or event.chat.id == OWNER_ID: # Telegram official bots will kill this codes
                 return
             else:
                 if not pmpermit_sql.is_approved(chat.id):
