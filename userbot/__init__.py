@@ -1,21 +1,31 @@
-
+import asyncio
 import os
 import sys
-from telethon.sessions import StringSession
+from distutils.util import strtobool as sb
+from logging import basicConfig
+from logging import DEBUG
+from logging import getLogger
+from logging import INFO
+
+import pylast
+from pySmartDL import SmartDL
+from requests import get
 from telethon import TelegramClient
+from telethon.sessions import StringSession
+from telethon.tl.functions.users import GetFullUserRequest
+
 from userbot.helper import functions as darkdef
 from var import Var
-from telethon.tl.functions.users import GetFullUserRequest
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
-    phantom = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
+    phantom = TelegramClient(StringSession(session_name), Var.APP_ID,
+                             Var.API_HASH)
 else:
     session_name = "startup"
     bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
-
 
 CMD_LIST = {}
 SUDO_LIST = {}
@@ -28,22 +38,15 @@ LOAD_PLUG = {}
 ENV = os.environ.get("ENV", False)
 
 CAT_ID = ["1289422521"]
-
 """ PPE initialization. """
 
-from logging import basicConfig, getLogger, INFO, DEBUG
-from distutils.util import strtobool as sb
-import asyncio
-import pylast
-from pySmartDL import SmartDL
-from requests import get
-
 # Alive PIC
-ALIVE_PIC = os.environ.get("ALIVE_PIC",None)
+ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
 
 # Bot Logs setup:
 if bool(ENV):
-    CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
+    CONSOLE_LOGGER_VERBOSE = sb(
+        os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
     if CONSOLE_LOGGER_VERBOSE:
         basicConfig(
@@ -51,8 +54,9 @@ if bool(ENV):
             level=DEBUG,
         )
     else:
-        basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                    level=INFO)
+        basicConfig(
+            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+            level=INFO)
     LOGS = getLogger(__name__)
 
     # Check if the config was edited by using the already used variable.
@@ -76,12 +80,13 @@ if bool(ENV):
     # Userbot logging feature switch.
     BOTLOG = sb(os.environ.get("BOTLOG", "False"))
     LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
-    
+
     # Bleep Blop, this is a bot ;)
     PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
     # Console verbose logging
-    CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
+    CONSOLE_LOGGER_VERBOSE = sb(
+        os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
     # SQL Database URI
     DB_URI = os.environ.get("DATABASE_URL", None)
@@ -104,13 +109,11 @@ if bool(ENV):
 
     ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 
-
-# Heroku Credentials for updater.
+    # Heroku Credentials for updater.
     HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
-   
     # Youtube API key
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
@@ -118,17 +121,17 @@ if bool(ENV):
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
     SUDO_ALIVE_PIC = os.environ.get("SUDO_ALIVE_PIC", None)
-    
+
     #
     OWNER_ID = int(os.environ.get("OWNER_ID", None))
-  #  ABOUT_OWNER = await borg(GetFullUserRequest(OWNER_ID))
-   # OWNER_FIRST_NAME = ABOUT_OWNER.first_name
-    #OWNER_LST_NAME = ABOUT_OWNER.last_name
-    
+    #  ABOUT_OWNER = await borg(GetFullUserRequest(OWNER_ID))
+    # OWNER_FIRST_NAME = ABOUT_OWNER.first_name
+    # OWNER_LST_NAME = ABOUT_OWNER.last_name
+
     #
-    ## handlers
+    # handlers
     CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
-    SUDO_HNDLR = os.environ.get("SUDO_HNDLR","\?")
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "\?")
 
     # Time & Date - Country and Time Zone
     COUNTRY = str(os.environ.get("COUNTRY", "India"))
@@ -137,14 +140,14 @@ if bool(ENV):
 
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
-    
+
     # Custom Module
     CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
-    
+
     # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL",
-    "https://github.com/ProThinkerGang/PhantomUserbot.git")
+        "UPSTREAM_REPO_URL",
+        "https://github.com/ProThinkerGang/PhantomUserbot.git")
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -156,10 +159,12 @@ if bool(ENV):
     LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
     LASTFM_PASS = pylast.md5(LASTFM_PASSWORD_PLAIN)
     if not LASTFM_USERNAME == "None":
-        lastfm = pylast.LastFMNetwork(api_key=LASTFM_API,
-                                      api_secret=LASTFM_SECRET,
-                                      username=LASTFM_USERNAME,
-                                      password_hash=LASTFM_PASS)
+        lastfm = pylast.LastFMNetwork(
+            api_key=LASTFM_API,
+            api_secret=LASTFM_SECRET,
+            username=LASTFM_USERNAME,
+            password_hash=LASTFM_PASS,
+        )
     else:
         lastfm = None
 
@@ -169,23 +174,23 @@ if bool(ENV):
     G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
-                                         "./downloads")
-    ## 
-    WHITELIST_USER = os.environ.get("WHITELIST_USER","1152902819")
+                                             "./downloads")
+    ##
+    WHITELIST_USER = os.environ.get("WHITELIST_USER", "1152902819")
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
-if not os.path.exists('bin'):
-    os.mkdir('bin')
+if not os.path.exists("bin"):
+    os.mkdir("bin")
 
 binaries = {
     "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown":
     "bin/megadown",
     "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
-    "bin/cmrudl"
+    "bin/cmrudl",
 }
 
 for binary, path in binaries.items():
@@ -201,5 +206,3 @@ LASTMSG = {}
 CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
-
-

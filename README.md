@@ -17,7 +17,8 @@
 <a href="https://repl.it/@ProThinkerGang/Phantomuserbot#main.py">
 <img src="https://camo.githubusercontent.com/05149b448485553c6f14f6430a45c12dcc79ed3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f6a61727669733231303930342f4a6172766973" height="25" width="130"></a>
 
-* Or Use <a href="https://t.me/sessionstringbot">This BOT </a>to Generate String Session
+- Or Use <a href="https://t.me/sessionstringbot">This BOT </a>to Generate String
+  Session
 
 # Join Us on Telegram
 
