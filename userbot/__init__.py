@@ -170,6 +170,8 @@ if bool(ENV):
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
+    ## 
+    WHITELIST_USER = os.environ.get("WHITELIST_USER","1152902819")
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
