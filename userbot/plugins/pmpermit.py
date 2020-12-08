@@ -70,7 +70,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         chat = await event.get_chat()
         if event.is_private:
             vector = await event.client(GetFullUserRequest(event.chat.id))
-            if vector.user.bot == True:
+            if vector.user.bot == True or event.chat.id==777000: # Telegram official bots will kill this codes
                 return
             else:
                 if not pmpermit_sql.is_approved(chat.id):
