@@ -2,7 +2,6 @@
 # kang with Credits
 # Dont Remove This Lines
 # (C) Phantom Userbot
-
 import asyncio
 import os
 import random
@@ -11,8 +10,11 @@ from telethon import events
 from telethon.errors import ChatSendMediaForbiddenError
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from userbot import ALIVE_NAME, ALIVE_PIC, SUDO_ALIVE_PIC
-from userbot.utils import phantom_cmd, sudo_cmd
+from userbot import ALIVE_NAME
+from userbot import ALIVE_PIC
+from userbot import SUDO_ALIVE_PIC
+from userbot.utils import phantom_cmd
+from userbot.utils import sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 

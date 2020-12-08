@@ -2,9 +2,7 @@
 # Plugin Made By @Anonymous_Machinee
 # Kang With Credit
 # (c) Phantom Userbot
-
 # ALL IMPORTS ARE OF WAIFU PLUGIN (NO DELETION , ONLY ADDITION IN IMPORT)
-
 import html
 import io
 import json
@@ -13,18 +11,24 @@ import re
 import sys
 from asyncio import sleep
 from os import execl
-from random import choice, getrandbits, randint
+from random import choice
+from random import getrandbits
+from random import randint
 from re import sub
 
-from PIL import ImageEnhance, ImageOps
-from telethon import errors, events
-from telethon.errors import (ChatSendInlineForbiddenError,
-                             ChatSendStickersForbiddenError)
+from PIL import ImageEnhance
+from PIL import ImageOps
+from telethon import errors
+from telethon import events
+from telethon.errors import ChatSendInlineForbiddenError
+from telethon.errors import ChatSendStickersForbiddenError
 from telethon.tl.functions.messages import GetInlineBotResultsRequest
 
-from userbot import CMD_HELP, bot
+from userbot import bot
+from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import phantom_cmd, sudo_cmd
+from userbot.utils import phantom_cmd
+from userbot.utils import sudo_cmd
 
 # @borg.on(phantom_cmd(pattern="^.stic ?(.*)"))
 # @borg.on(sudo_cmd(pattern="^.stic ?(.*)", allow_sudo=True))
