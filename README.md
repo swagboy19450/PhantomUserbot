@@ -14,12 +14,17 @@
 
 ## String Session
 
-<a href="https://phantomuserbot.prothinkergang.repl.run/">
+<a href="https://repl.it/@ProThinkerGang/Phantomuserbot#main.py">
 <img src="https://camo.githubusercontent.com/05149b448485553c6f14f6430a45c12dcc79ed3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f6a61727669733231303930342f4a6172766973" height="25" width="130"></a>
+
+- Or Use <a href="https://t.me/sessionstringbot">This BOT </a>to Generate String
+  Session
 
 # Join Us on Telegram
 
-<a href="https://t.me/PhantomSupport"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram" width="190" height="28"></a>
+<a href="https://t.me/Phantomot"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram" width="190" height="28"></a>
 &nbsp; &nbsp; &nbsp;
-<a href="https://t.me/Phantomot"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram" width="190" height="28"></a>
-<br><hr> <p align="center"><img src="https://telegra.ph/file/005cc69cebfbea719ee2a.jpg"><img src="https://telegra.ph/file/7a8390734fe7962d9b5ec.jpg"></p>
+
+<a href="https://t.me/PhantomSupport"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram" width="190" height="28"></a>
+<br><hr> <img src="https://telegra.ph/file/284a06947670a08001b67.jpg">
+

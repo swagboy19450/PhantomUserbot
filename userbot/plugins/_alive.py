@@ -2,31 +2,33 @@
 # kang with Credits
 # Dont Remove This Lines
 # (C) Phantom Userbot
-
 import asyncio
 import os
 import random
+
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.errors import ChatSendMediaForbiddenError
+from telethon.tl.types import ChannelParticipantsAdmins
+
 from userbot import ALIVE_NAME
-from userbot import ALIVE_PIC, SUDO_ALIVE_PIC
-from userbot.utils import phantom_cmd, sudo_cmd
+from userbot import ALIVE_PIC
+from userbot import SUDO_ALIVE_PIC
+from userbot.utils import phantom_cmd
+from userbot.utils import sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PHANTOM USER"
 
-PHANTOM_PIC="https://telegra.ph/file/ecb974be110f8141e861d.jpg"
+PHANTOM_PIC = "https://telegra.ph/file/ecb974be110f8141e861d.jpg"
 
 if ALIVE_PIC is None:
-    ALIVE_PIC=PHANTOM_PIC
+    ALIVE_PIC = PHANTOM_PIC
 else:
-    ALIVE_PIC=ALIVE_PIC
-    
+    ALIVE_PIC = ALIVE_PIC
+
 if SUDO_ALIVE_PIC is None:
     SUDO_ALIVE_PIC = ALIVE_PIC
 else:
     SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
-    
 
 alive_caption = "**PHANTOM UB IS ONLINE**\n"
 alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
@@ -35,8 +37,9 @@ alive_caption += "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.5**\n"
 alive_caption += "**ᴛᴇʟᴇᴛʜᴏɴ - ᴠᴇʀsɪᴏɴ ----> 1.17.0**\n"
 alive_caption += "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> 3.8.6**\n\n"
 alive_caption += "**🌀 SUPPORT INFO 🌀**\n"
-alive_caption += "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [Phantomsupport](https://t.me/PhantomSupport)\n"
-alive_caption += "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =** [Phantomot](https://t.me/Phantomot)\n\n"
+alive_caption += "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->**[Phantomot](https://t.me/Phantomot)\n"
+alive_caption += (
+    "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =**[Phantomsupport](https://t.me/PhantomSupport)\n\n")
 alive_caption += f"**[❤️ Create your own PHANTOM USERBOT ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
 
 medianotallowed = (
@@ -45,22 +48,25 @@ medianotallowed = (
     f"**My Master** => **{DEFAULTUSER}**\n"
     "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.5**\n"
     "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> 3.8.6**\n"
-    "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [PhantomSupport](https://t.me/PhantomSupport)\n"
+    "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [Phantomot](https://t.me/Phantomot)\n"
     "\n**[❤️Deploy Your Own Phantom Userbot ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
 )
-                   
-                   
+
 
 @borg.on(phantom_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-         await borg.send_file(alive.chat_id, file=ALIVE_PIC, caption=alive_caption)
-         await alive.delete()
+        await borg.send_file(alive.chat_id,
+                             file=ALIVE_PIC,
+                             caption=alive_caption)
+        await alive.delete()
     except ChatSendMediaForbiddenError:
-    	await alive.edit(medianotallowed)
- #Phantomot
+        await alive.edit(medianotallowed)
+
+
+# Phantomot
 
 
 @borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
@@ -68,8 +74,9 @@ async def sudoalivepic(sudoalive):
     chat = await sudoalive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-         await borg.send_file(sudoalive.chat_id, file=SUDO_ALIVE_PIC, caption=alive_caption)
-         await sudoalive.delete()
+        await borg.send_file(sudoalive.chat_id,
+                             file=SUDO_ALIVE_PIC,
+                             caption=alive_caption)
+        await sudoalive.delete()
     except ChatSendMediaForbiddenError:
-    	await sudoalive.edit(medianotallowed)
-    
+        await sudoalive.edit(medianotallowed)
