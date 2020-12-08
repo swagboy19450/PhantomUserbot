@@ -30,7 +30,7 @@ else:
     SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
 
 alive_caption = "**PHANTOM UB IS ONLINE**\n"
-alive_caption += f"**My Master** => **{owner_name}**\n\n"
+alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
 alive_caption += "🤖 **SYSTEM INFO** 🤖\n"
 alive_caption += "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.5**\n"
 alive_caption += "**ᴛᴇʟᴇᴛʜᴏɴ - ᴠᴇʀsɪᴏɴ ----> 1.17.0**\n"
@@ -44,7 +44,7 @@ alive_caption += f"**[❤️ Create your own PHANTOM USERBOT ❤️](https://das
 medianotallowed = (
     "**PHANTOM UB IS ONLINE**\n"
     "\n**🌀 Current Stats 🌀\n**"
-    f"**My Master** => **{owner_name}**\n"
+    f"**My Master** => **{DEFAULTUSER}**\n"
     "**ᴜsᴇʀʙᴏᴛ - ᴠᴇʀsɪᴏɴ------>> 0.5**\n"
     "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> 3.8.6**\n"
     "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->** [Phantomot](https://t.me/Phantomot)\n"
