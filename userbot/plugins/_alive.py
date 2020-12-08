@@ -5,7 +5,6 @@
 import asyncio
 import os
 import random
-from userbot.plugins import owner_name
 from telethon import events
 from telethon.errors import ChatSendMediaForbiddenError
 from telethon.tl.types import ChannelParticipantsAdmins
