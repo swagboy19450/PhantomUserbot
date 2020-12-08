@@ -3,17 +3,16 @@ Syntax: .lsroot , .lslocal"""
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-from telethon import events
-import subprocess
-from telethon.errors import (
-    MessageEmptyError,
-    MessageTooLongError,
-    MessageNotModifiedError,
-)
-import io
 import asyncio
-import time
+import io
 import os
+import subprocess
+import time
+
+from telethon import events
+from telethon.errors import (MessageEmptyError, MessageNotModifiedError,
+                             MessageTooLongError)
+
 from userbot.utils import phantom_cmd, sudo_cmd
 
 if not os.path.isdir("./SAVED"):

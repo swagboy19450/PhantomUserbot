@@ -5,26 +5,26 @@
 
 # ALL IMPORTS ARE OF WAIFU PLUGIN (NO DELETION , ONLY ADDITION IN IMPORT)
 
-from asyncio import sleep
-from random import choice, getrandbits, randint
-import re
-from re import sub
-from telethon import errors
-import random
-from os import execl
-from telethon import events
-from userbot import bot
-import sys
-import io
 import html
-from telethon.errors import ChatSendStickersForbiddenError
+import io
 import json
+import random
+import re
+import sys
+from asyncio import sleep
+from os import execl
+from random import choice, getrandbits, randint
+from re import sub
+
 from PIL import ImageEnhance, ImageOps
-from userbot import CMD_HELP
-from userbot.utils import phantom_cmd, sudo_cmd
-from userbot.events import register
+from telethon import errors, events
+from telethon.errors import (ChatSendInlineForbiddenError,
+                             ChatSendStickersForbiddenError)
 from telethon.tl.functions.messages import GetInlineBotResultsRequest
-from telethon.errors import ChatSendInlineForbiddenError
+
+from userbot import CMD_HELP, bot
+from userbot.events import register
+from userbot.utils import phantom_cmd, sudo_cmd
 
 # @borg.on(phantom_cmd(pattern="^.stic ?(.*)"))
 # @borg.on(sudo_cmd(pattern="^.stic ?(.*)", allow_sudo=True))

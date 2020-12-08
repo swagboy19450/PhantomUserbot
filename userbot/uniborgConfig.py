@@ -1,4 +1,5 @@
 import os
+
 from telethon.tl.types import ChatBannedRights
 
 ENV = bool(os.environ.get("ENV", False))
