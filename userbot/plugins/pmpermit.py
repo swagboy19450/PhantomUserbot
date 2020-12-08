@@ -71,16 +71,17 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
             vector = await event.client(GetFullUserRequest(event.chat.id))
             if vector.user.bot == True:
-                pass
-            if not pmpermit_sql.is_approved(chat.id):
-                if not chat.id in PM_WARNS:
-                    pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = (
+                return
+            else:
+                if not pmpermit_sql.is_approved(chat.id):
+                    if not chat.id in PM_WARNS:
+                        pmpermit_sql.approve(chat.id, "outgoing")
+                        bruh = (
                         "**=>>** User has been auto-approved Bcoz outgoing messages.."
                     )
-                    rko = await borg.send_message(event.chat_id, bruh)
-                    await asyncio.sleep(4)
-                    await rko.delete()
+                        rko = await borg.send_message(event.chat_id, bruh)
+                        await asyncio.sleep(4)
+                        await rko.delete()
 
     @command(pattern="^.block ?(.*)")
     async def approve_p_m(event):
@@ -133,7 +134,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await event.delete()
 
 
-    @command(pattern="^.listapproved")
+    @command(pattern="^.listap")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -148,7 +149,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                         f"=**>>** [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
                     )
         else:
-            APPROVED_PMs = "No approved PMs (yet)"
+            APPROVED_PMs = "Master, No approved PMs (yet)"
         if len(APPROVED_PMs) > 4095:
             with io.BytesIO(str.encode(APPROVED_PMs)) as out_file:
                 out_file.name = "approved.pms.text"
