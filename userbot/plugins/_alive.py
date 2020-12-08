@@ -30,7 +30,6 @@ if SUDO_ALIVE_PIC is None:
 else:
     SUDO_ALIVE_PIC = SUDO_ALIVE_PIC
 
-
 alive_caption = "**PHANTOM UB IS ONLINE**\n"
 alive_caption += f"**My Master** => **{DEFAULTUSER}**\n\n"
 alive_caption += "🤖 **SYSTEM INFO** 🤖\n"
@@ -40,8 +39,7 @@ alive_caption += "**ᴘʏᴛʜᴏɴ -  ᴠᴇʀsɪᴏɴ ------> 3.8.6**\n\n"
 alive_caption += "**🌀 SUPPORT INFO 🌀**\n"
 alive_caption += "**sᴜᴘᴘᴏʀᴛ - ᴄʜᴀɴɴᴇʟ ---->**[Phantomot](https://t.me/Phantomot)\n"
 alive_caption += (
-    "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =**[Phantomsupport](https://t.me/PhantomSupport)\n\n"
-)
+    "**sᴜᴘᴘᴏʀᴛ - ɢʀᴏᴜᴘ =**[Phantomsupport](https://t.me/PhantomSupport)\n\n")
 alive_caption += f"**[❤️ Create your own PHANTOM USERBOT ❤️](https://dashboard.heroku.com/new?template=https://github.com/prothinkergang/Phantomuserbot)**"
 
 medianotallowed = (
@@ -60,7 +58,9 @@ async def amireallyalive(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-        await borg.send_file(alive.chat_id, file=ALIVE_PIC, caption=alive_caption)
+        await borg.send_file(alive.chat_id,
+                             file=ALIVE_PIC,
+                             caption=alive_caption)
         await alive.delete()
     except ChatSendMediaForbiddenError:
         await alive.edit(medianotallowed)
@@ -74,9 +74,9 @@ async def sudoalivepic(sudoalive):
     chat = await sudoalive.get_chat()
     """ For .alive command, check if the bot is running.  """
     try:
-        await borg.send_file(
-            sudoalive.chat_id, file=SUDO_ALIVE_PIC, caption=alive_caption
-        )
+        await borg.send_file(sudoalive.chat_id,
+                             file=SUDO_ALIVE_PIC,
+                             caption=alive_caption)
         await sudoalive.delete()
     except ChatSendMediaForbiddenError:
         await sudoalive.edit(medianotallowed)

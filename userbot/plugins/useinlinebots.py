@@ -86,8 +86,7 @@ async def phantomot(quote):
         await quote.edit("Sorry boss, cant make inline request here !!")
 
     CMD_HELP.update({"stic": ".stic : will send random sticker from emoji."})
-    CMD_HELP.update(
-        {
-            "gqbot": ".gqbot : use this as .gqbot <author name>. Send Quoted Related to Search."
-        }
-    )
+    CMD_HELP.update({
+        "gqbot":
+        ".gqbot : use this as .gqbot <author name>. Send Quoted Related to Search."
+    })
