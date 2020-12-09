@@ -3,7 +3,7 @@
 from telethon import events
 import asyncio
 import sys
-from uniborg.util import phantom_cmd
+from userbot.utils import phantom_cmd
 
 
 @borg.on(phantom_cmd(pattern=r"lmoon"))
