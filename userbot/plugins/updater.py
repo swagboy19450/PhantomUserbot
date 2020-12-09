@@ -10,7 +10,7 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot import CMD_HELP, bot
-from userbot.utils import admin_cmd
+from userbot.utils import phantom_cmd
 
 UPSTREAM_REPO_URL = "https://github.com/Prothinkergang/PhantomUserbot"
 HEROKU_API_KEY = Var.HEROKU_API_KEY
@@ -38,7 +38,7 @@ async def update_requirements():
     except Exception as e:
         return repr(e)
 
-@borg.on(admin_cmd(pattern="update ?(.*)", outgoing=True))
+@borg.on(phantom_cmd(pattern="update ?(.*)", outgoing=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     conf = ups.pattern_match.group(1)
@@ -109,7 +109,7 @@ async def upstream(ups):
     if force_update:
         await ups.edit('Force-Syncing to latest stable userbot code, Please wait a while...')
     else:
-        await ups.edit('Updating userbot, please wait....\nDo `.update now` if u[date doesnt took place...')
+        await ups.edit('Updating userbot, please wait....\nDo `.update now` if update doesnt took place...')
     if HEROKU_API_KEY is not None:
         import heroku3
         heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -140,6 +140,7 @@ async def upstream(ups):
             remote = repo.create_remote("heroku", heroku_git_url)
         await ups.edit("`Userbot Build in Progress,\nPlease Wait a While`")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
+        await ups.edit("`Successfully Updated. Restarting..`")
     else:
         try:
             ups_rem.pull(ac_br)
@@ -152,12 +153,3 @@ async def upstream(ups):
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
         return
-    
-
-CMD_HELP.update({
-    'update':
-    ".update\
-\nUsage: Checks if the main userbot repository has any updates and shows a changelog if so.\
-\n\n.update now\
-\nUsage: Updates your userbot, if there are any updates in the main userbot repository."
-})
