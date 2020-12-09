@@ -176,7 +176,7 @@ if bool(ENV):
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
                                              "./downloads")
     ##
-    WHITELIST_USER = os.environ.get("WHITELIST_USER", "1152902819")
+    #WHITELIST_USER = os.environ.get("WHITELIST_USER", "1152902819")
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
