@@ -60,7 +60,7 @@ async def _(event):
 @register(outgoing=True, pattern="^.repo$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("[Here is the repo of PHANTOM USERBOT ](https://github.com/prothinkergang/phantomuserbot)")
+        await e.edit("**Here is the repo of **[PHANTOM USERBOT ](https://github.com/prothinkergang/phantomuserbot)")
 
 
             
