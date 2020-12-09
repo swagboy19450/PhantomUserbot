@@ -7,7 +7,7 @@ from userbot.utils import phantom_cmd, load_module, remove_plugin
 from userbot import ALIVE_NAME
 from userbot import bot
 from userbot.utils import edit_or_reply
-
+from telethon.errors import ChatSendMediaForbiddenError
 DELETE_TIMEOUT = 5
 thumb_image_path = "./Resources/phantomot.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
@@ -34,8 +34,17 @@ async def send(event):
         )
         end = datetime.now()
         time_taken_in_ms = (end - start).seconds
+        m_list = None
+        with open(the_plugin_file, "rb") as fd:
+            m_list = fd.readlines()
+        message = ""
+        for m in m_list:
+                message += m.decode("UTF-8") + "\r\n"
+        url = "https://del.dog/documents"
+        r = requests.post(url, data=message.encode("UTF-8")).json()
+        url = f"https://del.dog/{r['key']}"
         await pro.edit(
-                       f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
+                       f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n**Pasted Code**: [Del-Dog]({url})"
         ) #doesnt work in saved messages
         await asyncio.sleep(DELETE_TIMEOUT)
         await event.delete()
