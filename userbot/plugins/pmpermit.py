@@ -99,6 +99,8 @@ if Var.PRIVATE_GROUP_ID is not None:
                     "You are tried to block my Devs , now i will sleep for 120 seconds 😴 "
                 )
                 await asyncio.sleep(120)
+            if chat.id==Var.WHITELIST_USER:
+                await event.edit("**Master, This user is in Whitelisted User.\nFirst Remove it from There !!**")
             else:
                 if pmpermit_sql.is_approved(chat.id):
                     pmpermit_sql.disapprove(chat.id)
