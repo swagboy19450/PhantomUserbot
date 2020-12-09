@@ -264,5 +264,5 @@ async def hehehe(event):
             pmpermit_sql.approve(chat.id, "WHITELISTED USER")
             await borg.send_message(
                 chat,
-                "This User is in WHITELISTED Users List ~\nHence Auto-Approved"
+                "This user is in List of `WHITELISTED\nUSER`\n**Hence** ==>> `Auto Approved`"
             )
