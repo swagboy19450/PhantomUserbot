@@ -15,6 +15,7 @@ from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 from userbot.utils import phantom_cmd
 from userbot import OWNER_ID
+from var import Var
 
 DEF_PIC = "https://telegra.ph/file/f054368430015a0c65ce1.jpg"
 
@@ -251,4 +252,17 @@ async def hehehe(event):
             await borg.send_message(
                 chat,
                 "**Boss Meet My Creator he made me..he is the best you know..**"
+            )
+
+@bot.on(events.NewMessage(incoming=True, from_users=(Var.WHITELIST_USER)))
+async def hehehe(event):
+    if event.fwd_from:
+        return
+    chat = await event.get_chat()
+    if event.is_private:
+        if not pmpermit_sql.is_approved(chat.id):
+            pmpermit_sql.approve(chat.id, "WHITELISTED USER")
+            await borg.send_message(
+                chat,
+                "This User is in WHITELISTED Users List ~\nHence Auto-Approved"
             )
