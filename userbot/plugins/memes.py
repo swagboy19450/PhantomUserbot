@@ -662,13 +662,7 @@ async def vapor(vpr):
                 reply_text.append(charac)
 
         await vpr.edit("".join(reply_text))
-
-			  
-@register(outgoing=True, pattern="^.repo$")
-async def source(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("[Phantom Userbot](https://github.com/prothinkergang/phantomuserbot)")
-			  
+						  
 			  
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
 async def stretch(stret):
