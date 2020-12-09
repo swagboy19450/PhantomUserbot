@@ -1,15 +1,15 @@
 # by uniborg...Thanks @spechide 
 # Now will be used in DARK COBRA too....
+# Later Phantom Userbot
+
 """Syntax: .afk REASON"""
+
 import asyncio
 import datetime
 from datetime import datetime
-
 from telethon import events
 from telethon.tl import functions, types
-
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userbot.utils import phantom_cmd
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
@@ -129,7 +129,7 @@ async def on_afk(event):
         last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
 
 
-@borg.on(admin_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
+@borg.on(phantom_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -168,14 +168,3 @@ async def _(event):
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
-
-
-CMD_HELP.update(
-    {
-        "afk": "__**PLUGIN NAME :** Afk__\
-\n\n📌** CMD ➥** `.afk` [Optional Reason]\
-\n**USAGE   ➥  **Sets you as afk.\nReplies to anyone who tags/PM's \
-you telling them that you are AFK(reason)\n\n__Switches off AFK when you type back anything, anywhere.__\
-"
-    }
-)
