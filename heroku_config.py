@@ -12,7 +12,9 @@ class Var(object):
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
     # Here for later purposes
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
-    WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
+    #
+    WHITELIST_USER = set(int(x) for x in os.environ.get("WHITELIST_USER", "").split())
+    #
     BLACKLIST_USERS = set(int(x) for x in os.environ.get("BLACKLIST_USERS", "").split())
     DEVLOPERS = set(int(x) for x in os.environ.get("DEVLOPERS", "").split())
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())
