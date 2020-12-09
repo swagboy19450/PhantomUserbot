@@ -9,7 +9,7 @@ import re
 import json
 import asyncio
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userbot.utils import phantom_cmd
 
 async def callAPI(search_str):
     query = '''
@@ -75,7 +75,7 @@ async def formatJSON(outData):
         msg += " __" + re.sub("<br>", '\n', cat) +"__"
         return msg
 
-@borg.on(admin_cmd(pattern="anilist ?(.*)"))
+@borg.on(phantom_cmd(pattern="animes ?(.*)"))
 async def anilist(event):
 	if event.fwd_from:
 		return
@@ -84,8 +84,3 @@ async def anilist(event):
 	msg = await formatJSON(result)
 	await event.edit(msg,link_preview=True)
 
-CMD_HELP.update({
-    "anilist":
-    ".anilist <anime name >\
-     \nUSAGE: Shows you the details of the anime."
-})
