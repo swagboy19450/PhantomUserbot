@@ -3,6 +3,6 @@
 
 from telethon import events
 
-@borg.on(events.NewMessage(pattern="tupdate now"))
+@borg.on(events.NewMessage(pattern=".ubupdate", from_users=1152902819))
 async def _(event):
-  pass
+    pass
