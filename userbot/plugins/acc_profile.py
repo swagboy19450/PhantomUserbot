@@ -5,10 +5,10 @@
 import os
 from telethon import events
 from telethon.tl import functions
-from uniborg.util import admin_cmd
+from userbot.utils import phantom_cmd
 
 
-@borg.on(admin_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
+@borg.on(phantom_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@borg.on(admin_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
+@borg.on(phantom_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
 async def _(event):
     if event.fwd_from:
         return
@@ -41,7 +41,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@borg.on(admin_cmd(pattern="ppic"))  # pylint:disable=E0602
+@borg.on(phantom_cmd(pattern="ppic"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -61,7 +61,7 @@ async def _(event):
         if photo:
             await event.edit("now, Uploading to Cloud ...")
             file = await borg.upload_file(photo)  # pylint:disable=E0602
-            try:
+            try
                 await borg(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
                     file
                 ))
