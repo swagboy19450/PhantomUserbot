@@ -1,5 +1,7 @@
 import asyncio
 import os
+import requests
+from requests import exceptions, get
 from datetime import datetime
 from pathlib import Path
 from telethon.tl.types import InputMessagesFilterDocument
