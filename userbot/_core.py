@@ -6,6 +6,7 @@ from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import phantom_cmd, load_module, remove_plugin
 from userbot import ALIVE_NAME
 from userbot import bot
+from userbot.utils import edit_or_reply
 
 DELETE_TIMEOUT = 5
 thumb_image_path = "./Resources/phantomot.jpg"
