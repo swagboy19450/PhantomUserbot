@@ -46,7 +46,7 @@ async def send(event):
             r = requests.post(url, data=message.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
             await pro.edit(
-                       f"**==> Plugin name :** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by :** [{DEFAULTUSER}](tg://user?id={hmm})\n==>**View on Web** : [Del-Dog]({url})"
+                       f"**==> Plugin name :** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by :** [{DEFAULTUSER}](tg://user?id={hmm})\n==> **View on Web** : [Del-Dog]({url})"
         ) #doesnt work in saved messages
             await asyncio.sleep(1)
             await event.delete()
