@@ -48,7 +48,7 @@ async def send(event):
             await pro.edit(
                        f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n==>**Pasted Code**: [Del-Dog]({url})"
         ) #doesnt work in saved messages
-            await asyncio.sleep(DELETE_TIMEOUT)
+            await asyncio.sleep(1)
             await event.delete()
         except ChatSendMediaForbiddenError:
             await pro.edit("Boss, Cant Send File Here")
