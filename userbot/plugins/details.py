@@ -9,6 +9,7 @@ from telethon import events
 import asyncio
 
 from uniborg.util import admin_cmd
+from userbot.utils import phantom_cmd, register
 
 from userbot import AUTONAME
 
@@ -55,3 +56,11 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 12])
+         
+@register(outgoing=True, pattern="^.repo$")
+async def source(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit("[Here is the repo of **Phantom Userbot**](https://github.com/prothinkergang/phantomuserbot)")
+
+
+            
