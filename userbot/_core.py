@@ -53,7 +53,7 @@ async def send(event):
         except ChatSendMediaForbiddenError:
             await event.edit("Boss, Cant Send File Here")
             await asyncio.sleep(0.5)
-            await evemt.edit("pasting the codes...")
+            await event.edit("pasting the codes...")
             m_list = None
             with open(the_plugin_file, "rb") as fd:
                 m_list = fd.readlines()
