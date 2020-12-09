@@ -117,7 +117,7 @@ async def cmd_list(event):
             await event.delete()
             
 
-@borg.on(admin_cmd(pattern="syntax (.*)"))
+@borg.on(phantom_cmd(pattern="syntax (.*)"))
 async def _(event):
     if event.fwd_from:
         return
