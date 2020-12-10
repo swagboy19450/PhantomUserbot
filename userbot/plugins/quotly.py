@@ -22,9 +22,6 @@ async def _(event):
        return
     chat = "@QuotLyBot"
     sender = reply_message.sender
-    if reply_message.sender.bot:
-       await edit_or_reply(event,"```Reply to actual users message.```")
-       return
     hitler = await edit_or_reply(event,"```Making a Quote```")
     async with bot.conversation(chat) as conv:
           try:     
