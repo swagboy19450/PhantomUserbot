@@ -63,7 +63,7 @@ async def send(event):
             url = "https://del.dog/documents"
             r = requests.post(url, data=message.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
-            await event.edit(f"Pasted {input_str}.py [Here]({url}) !!")
+            await event.edit(f"Pasted `{input_str}` [Here]({url}) !!")
     else:
         await edit_or_reply(event, "**404**: __File Not Found__")
 
