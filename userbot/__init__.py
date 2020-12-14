@@ -14,7 +14,7 @@ from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot.helper import functions as darkdef
+from userbot.helpers import functions as darkdef
 from var import Var
 
 os.system("pip install --upgrade pip")
