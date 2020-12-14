@@ -11,7 +11,7 @@ import sys
 import random
 from userbot.utils import phantom_cmd
 
-@borg.on(phantom_cmd(pattern=r"tip", outgoing=True))
+@borg.on(phantom_cmd(pattern=r"protip", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
