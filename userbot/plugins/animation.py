@@ -1,4 +1,5 @@
-''' Whatever Plugin by Noobs of Telegram i.e. @pureindialover '''
+# Mixed Animation plugin
+# some credit :- @pureindialover 
 
 from telethon import events
 import asyncio
