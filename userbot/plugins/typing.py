@@ -1,15 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
+
 import asyncio
-from uniborg.util import admin_cmd
+from userbot.utils import phantom_cmd
 
+PHANTOM_SYM = (
+    "|",
+    "▒",
+    "║",
+    "》",
+    "⫸",
+    "➤",
+    "➺"
+)
 
-@borg.on(admin_cmd(pattern="type (.*)"))
+@borg.on(phantom_cmd(pattern="type (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     # https://t.me/AnotherGroup/176551
+    MACHINEE = random.randrange(0,len(PHANTOM_SYM)-1)
+    TYPO_GRAM = PHANTOM_SYM[MACHINEE]
     input_str = event.pattern_match.group(1)
     shiiinabot = "\u2060"
     for i in range(601):
@@ -18,7 +30,7 @@ async def _(event):
         await event.edit(shiiinabot)
     except Exception as e:
         logger.warn(str(e))
-    typing_symbol = "|"
+    typing_symbol = TYPO_GRAM
     DELAY_BETWEEN_EDITS = 0.3
     previous_text = ""
     await event.edit(typing_symbol)
