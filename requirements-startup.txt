@@ -1,4 +1,5 @@
 aiofiles
+appdirs
 aiohttp
 aria2p
 async_generator
