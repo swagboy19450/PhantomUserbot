@@ -17,8 +17,7 @@ from userbot.utils import sudo_cmd
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
-        remove_space = app_name.split(" ")
-        final_name = "+".join(remove_space)
+        final_name = app_name.replace(" ","+")
         page = requests.get("https://play.google.com/store/search?q=" +
                             final_name + "&c=apps")
         lnk = str(page.status_code)
@@ -59,8 +58,7 @@ async def apk(e):
 async def apkr(e):
     try:
         app_name = e.pattern_match.group(1)
-        remove_space = app_name.split(" ")
-        final_name = "+".join(remove_space)
+        final_name = app_name.replace(" ","+")
         page = requests.get("https://play.google.com/store/search?q=" +
                             final_name + "&c=apps")
         lnk = str(page.status_code)
