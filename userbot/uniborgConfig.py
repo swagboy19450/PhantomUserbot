@@ -25,7 +25,7 @@ if ENV:
                                                   None)
         # This is required for the @telegraph functionality.
         TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME",
-                                              "IndianBot")
+                                              "PHANTOMBOT")
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
