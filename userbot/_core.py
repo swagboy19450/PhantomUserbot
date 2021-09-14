@@ -85,7 +85,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "`{}` successfully installed\nJoin @PhantomOt".format(
+                    "`{}` successfully installed\nJoin @Phantom_USERBOT".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
