@@ -53,7 +53,7 @@ if ALIVE_PIC is not None:
 
 import userbot._core
 print("Everything is Alright, Do .alive or .help to Check Online Status of Your Bot !!")
-print("Join @PhantomOt For Reporting any Bug or an Issue !!")
+print("Join @Phantom_USERBOT For Reporting any Bug or an Issue !!")
 
 
 if len(argv) not in (1, 3, 4):
